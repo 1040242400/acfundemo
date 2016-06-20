@@ -25,6 +25,7 @@ public class Application extends android.app.Application {
         params.put("commonParamsKey1", "commonParamsValue1");     //所有的 params 都 支持 中文
         params.put("commonParamsKey2", "这里支持中文参数");
 
+
         //必须调用初始化
         OkHttpUtils.init(this);
         //以下都不是必须的，根据需要自行选择
