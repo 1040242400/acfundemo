@@ -275,9 +275,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
             }
 
-            //最后一行 列数
             int lastLineCount = count % rowNum;
-            //不存在最后一行
             if (position + 1 <= (count - lastLineCount)) {
                 outRect.bottom = sPace;
             }
