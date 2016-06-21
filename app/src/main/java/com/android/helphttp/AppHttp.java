@@ -17,9 +17,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.acfun.com.acfundemo.entity.BaseEntity;
 import demo.acfun.com.acfundemo.entity.TuiJianEntity;
-import demo.acfun.com.acfundemo.ui.MainTuiJianFragment;
 import okhttp3.Request;
 import okhttp3.Response;
 
@@ -50,17 +48,26 @@ public class AppHttp {
                                 TuiJianEntity entity = new TuiJianEntity();
                                 JSONObject itemObj = data.optJSONObject(i);
                                 entity.setName(itemObj.optString("name"));
+                                entity.setImage(itemObj.optString("image"));
 
-                                JSONArray itemArray = itemObj.optJSONArray("contents");
-                                List<TuiJianEntity.ContentsBean> contentsBeen = new ArrayList<>();
-                                for (int j = 0; j < itemArray.length(); j++) {
-                                    JSONObject itemJObj = itemArray.getJSONObject(j);
-                                    TuiJianEntity.ContentsBean cb = new TuiJianEntity.ContentsBean();
-                                    cb.setImage(itemJObj.optString("image"));
-                                    cb.setTitle(itemJObj.optString("title"));
-                                    contentsBeen.add(cb);
+                                JSONArray contents = itemObj.optJSONArray("contents");
+                                List<TuiJianEntity.ContentsBean> contentsBeens = new ArrayList<>();
+                                for (int j = 0; j < contents.length(); j++) {
+                                    JSONObject itemContents = contents.getJSONObject(j);
+                                    TuiJianEntity.ContentsBean contentsBean = new TuiJianEntity.ContentsBean();
+                                    contentsBean.setImage(itemContents.optString("image"));
+                                    contentsBean.setTitle(itemContents.optString("title"));
+
+                                    TuiJianEntity.VisitBean visitBean = new TuiJianEntity.VisitBean();
+                                    JSONObject visit = itemContents.optJSONObject("visit");
+                                    if (visit != null) {
+                                        visitBean.setViews(visit.optInt("views"));
+                                        visitBean.setStows(visit.optInt("stows"));
+                                    }
+                                    contentsBean.setVisit(visitBean);
+                                    contentsBeens.add(contentsBean);
                                 }
-                                entity.setContents(contentsBeen);
+                                entity.setContents(contentsBeens);
 
                                 TuiJianEntity.TypeBean tb = new TuiJianEntity.TypeBean();
                                 JSONObject type = itemObj.optJSONObject("type");

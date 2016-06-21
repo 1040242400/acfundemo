@@ -1,5 +1,6 @@
 package demo.acfun.com.acfundemo.ui;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.helphttp.AppHttp;
+import com.android.helputils.DensityUtil;
 import com.android.helputils.LogUtils;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.callback.StringCallback;
@@ -42,9 +44,26 @@ public class MainTuiJianFragment extends BaseFragment {
         View contentView = inflater.inflate(R.layout.main_tuijian_fragment, null);
 
         initView(contentView);
+
         laodData();
 
         return contentView;
+    }
+
+    private void initView(View contentView) {
+        swipeLayout = (SwipeRefreshLayout) contentView.findViewById(R.id.swipe_layout);
+        swipeLayout.setProgressBackgroundColor(R.color.white);
+        swipeLayout.setColorSchemeResources(R.color.colorPrimary);
+        swipeLayout.setSize(SwipeRefreshLayout.DEFAULT);
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                laodData();
+            }
+        });
+
+        recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false));
     }
 
     private void laodData() {
@@ -57,25 +76,6 @@ public class MainTuiJianFragment extends BaseFragment {
                 showData();
             }
         });
-
-    }
-
-
-    private void initView(View contentView) {
-        swipeLayout = (SwipeRefreshLayout) contentView.findViewById(R.id.swipe_layout);
-        swipeLayout.setProgressBackgroundColor(R.color.white);
-        swipeLayout.setColorSchemeResources(R.color.colorPrimary);
-        swipeLayout.setSize(SwipeRefreshLayout.DEFAULT);
-
-        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                laodData();
-            }
-        });
-
-        recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainTuiJianFragment.this.getActivity(), LinearLayoutManager.VERTICAL, false));
 
     }
 

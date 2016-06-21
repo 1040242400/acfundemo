@@ -4,6 +4,7 @@ package demo.acfun.com.acfundemo.adapter;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.List;
@@ -76,7 +80,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
                 return new ShiPinViewHolder(contentView);
             case TuiJianEntity.Hengfu:
-                contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
+                contentView = mLayoutInflater.inflate(R.layout.main_recycler_hengfu_item, parent, false);
                 return new HengFuViewHolder(contentView);
             case TuiJianEntity.XiangJiaoBang:
                 contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
@@ -140,6 +144,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         } else if (holder instanceof ShiPinViewHolder) {
             ShiPinViewHolder shiPinViewHolder = (ShiPinViewHolder) holder;
+            Picasso.with(context).load(itemEntity.getImage()).into(shiPinViewHolder.titleIcon);
             shiPinViewHolder.title.setText(itemEntity.getName());
             shiPinViewHolder.recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
             shiPinViewHolder.recyclerView.addItemDecoration(new ItemDecoration(DensityUtil.dp2px(context, 10), 2, itemEntity.getContents().size()));
@@ -154,6 +159,9 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         } else if (holder instanceof HengFuViewHolder) {
             HengFuViewHolder hengFuViewHolder = (HengFuViewHolder) holder;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) ((DensityUtil.getWindowsWidth(context) - (DensityUtil.dp2px(context, 16) * 2)) * 0.2971));
+//            hengFuViewHolder.image.setLayoutParams(params);
+            Picasso.with(context).load(itemEntity.getContents().get(0).getImage()).into(hengFuViewHolder.image);
         } else if (holder instanceof XiangJiaoBangViewHolder) {
             XiangJiaoBangViewHolder xiangJiaoBangViewHolder = (XiangJiaoBangViewHolder) holder;
         } else if (holder instanceof FanJuViewHolder) {
@@ -181,8 +189,8 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         public LunBoViewHolder(View contentView) {
             super(contentView);
-            sliderLayout = (SliderLayout) contentView.findViewById(R.id.slider);
-            pagerIndicator = (PagerIndicator) contentView.findViewById(R.id.custom_indicator);
+            sliderLayout = (SliderLayout) contentView.findViewById(R.id.slider_view);
+            pagerIndicator = (PagerIndicator) contentView.findViewById(R.id.custom_indicator_view);
 
             sliderLayout.setPresetTransformer(SliderLayout.Transformer.Default);
             sliderLayout.setCustomIndicator(pagerIndicator);
@@ -195,13 +203,15 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      * 视频视图
      */
     public class ShiPinViewHolder extends RecyclerView.ViewHolder {
+        public ImageView titleIcon;
         public TextView title, more;
         public RecyclerView recyclerView;
 
         public ShiPinViewHolder(View contentView) {
             super(contentView);
-            title = (TextView) contentView.findViewById(R.id.title);
-            more = (TextView) contentView.findViewById(R.id.more);
+            titleIcon = (ImageView) contentView.findViewById(R.id.title_icon_view);
+            title = (TextView) contentView.findViewById(R.id.title_view);
+            more = (TextView) contentView.findViewById(R.id.more_view);
             recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
 
         }
@@ -212,8 +222,11 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      */
     public class HengFuViewHolder extends RecyclerView.ViewHolder {
 
-        public HengFuViewHolder(View view) {
-            super(view);
+        private ImageView image;
+
+        public HengFuViewHolder(View contentView) {
+            super(contentView);
+            image = (ImageView) contentView.findViewById(R.id.image_view);
         }
     }
 
@@ -263,22 +276,27 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         @Override
         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int mar = DensityUtil.dp2px(context, 16);
+
+            int left = 0, right = 0, bottom = 0, top = 0;
 
             int position = parent.getChildPosition(view);
             if ((position + 1) % 2 == 0) {
-                outRect.left = sPace / 2;
-                outRect.right = mar;
+                left = sPace / 2;
             } else {
-                outRect.left = mar;
-                outRect.right = sPace / 2;
-
+                right = sPace / 2;
             }
 
             int lastLineCount = count % rowNum;
             if (position + 1 <= (count - lastLineCount)) {
-                outRect.bottom = sPace;
+                bottom = sPace / 2;
             }
+
+            if (view.getTag() == null) {
+                view.setTag(true);
+                outRect.set(left, top, right, bottom);
+            }
+
+            LogUtils.d(position + "item 间距 == left：" + outRect.left + "===right:" + outRect.right + "===bottom:" + outRect.bottom);
         }
     }
 }

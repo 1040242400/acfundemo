@@ -245,4 +245,21 @@ public class StringUtils {
         return decimalFormat.format(s);
     }
 
+    /**
+     * 转换万单位简写字符串
+     */
+    public static String toWanNumberString(int n, String format) {
+        double w = n / 10000.0;
+        if (w > 1) {
+            if (format == null || format.length() == 0) {
+                format = "0.0";
+            }
+            DecimalFormat decimalFormat = new DecimalFormat(format);
+            return decimalFormat.format(w) + "万";
+        } else {
+            return String.valueOf(n);
+        }
+
+    }
+
 }

@@ -6,15 +6,29 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_height="match_parent"
         android:gravity="center_vertical"
-        android:text="title"
-        android:textColor="@color/APPTextColor"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <ImageView
+            android:id="@+id/title_icon_view"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:gravity="center_vertical"
+            android:text="title"
+            android:textColor="@color/APPTextColor"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 
     <android.support.v7.widget.RecyclerView
@@ -22,16 +36,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" />
 
 
     <TextView
-        android:id="@+id/more"
+        android:id="@+id/more_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         android:background="@color/clearColor"
         android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
         android:text="more"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/font_size_m" />

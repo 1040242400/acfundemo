@@ -250,6 +250,7 @@ public class TuiJianEntity extends BaseEntity {
         private String subTitle;
         private String title;
         private String url;
+        private VisitBean visit;
 
         public int getActionId() {
             return actionId;
@@ -330,5 +331,92 @@ public class TuiJianEntity extends BaseEntity {
         public void setUrl(String url) {
             this.url = url;
         }
+
+        public VisitBean getVisit() {
+            return visit;
+        }
+
+        public void setVisit(VisitBean visit) {
+            this.visit = visit;
+        }
     }
+
+    public static class VisitBean {
+
+
+        /**
+         * comments : 1285
+         * danmakuSize : 194
+         * goldBanana : 8139
+         * score : 0
+         * stows : 2443
+         * ups : 0
+         * views : 139089
+         */
+
+        private int comments;
+        private int danmakuSize;
+        private int goldBanana;
+        private int score;
+        private int stows;
+        private int ups;
+        private int views;
+
+        public int getComments() {
+            return comments;
+        }
+
+        public void setComments(int comments) {
+            this.comments = comments;
+        }
+
+        public int getDanmakuSize() {
+            return danmakuSize;
+        }
+
+        public void setDanmakuSize(int danmakuSize) {
+            this.danmakuSize = danmakuSize;
+        }
+
+        public int getGoldBanana() {
+            return goldBanana;
+        }
+
+        public void setGoldBanana(int goldBanana) {
+            this.goldBanana = goldBanana;
+        }
+
+        public int getScore() {
+            return score;
+        }
+
+        public void setScore(int score) {
+            this.score = score;
+        }
+
+        public int getStows() {
+            return stows;
+        }
+
+        public void setStows(int stows) {
+            this.stows = stows;
+        }
+
+        public int getUps() {
+            return ups;
+        }
+
+        public void setUps(int ups) {
+            this.ups = ups;
+        }
+
+        public int getViews() {
+            return views;
+        }
+
+        public void setViews(int views) {
+            this.views = views;
+        }
+    }
+
 }

@@ -2,17 +2,17 @@ package demo.acfun.com.acfundemo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.helputils.DensityUtil;
-import com.android.helputils.LogUtils;
-import com.lzy.okhttputils.OkHttpUtils;
+import com.android.helputils.StringUtils;
+import com.felipecsl.gifimageview.library.GifImageView;
+import com.joooonho.SelectableRoundedImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -70,24 +70,27 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
                 listener.onItemClick(position);
             }
         });
-        TuiJianEntity.ContentsBean entity = entitys.get(position);
-
+        TuiJianEntity.ContentsBean itemEntity = entitys.get(position);
         ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.title.setText(entity.getTitle());
 
-        LinearLayout.LayoutParams imgP = new LinearLayout.LayoutParams((int) ((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2), (int) (((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2) * 0.5625));
+        viewHolder.title.setText(itemEntity.getTitle());
+        FrameLayout.LayoutParams imgP = new FrameLayout.LayoutParams((int) ((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2), (int) (((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2) * 0.5625));
         viewHolder.imageView.setLayoutParams(imgP);
-        Picasso.with(context).load(entity.getImage()).into(viewHolder.imageView);
+        Picasso.with(context).load(itemEntity.getImage()).into(viewHolder.imageView);
+        viewHolder.views.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getViews(), null));
+        viewHolder.stows.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getStows(), null));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
-        public TextView title;
+        public SelectableRoundedImageView imageView;
+        public TextView title, views, stows;
 
         public ViewHolder(View contextView) {
             super(contextView);
-            imageView = (ImageView) contextView.findViewById(R.id.image_view);
-            title = (TextView) contextView.findViewById(R.id.title);
+            imageView = (SelectableRoundedImageView) contextView.findViewById(R.id.image_view);
+            title = (TextView) contextView.findViewById(R.id.title_view);
+            views = (TextView) contextView.findViewById(R.id.views_view);
+            stows = (TextView) contextView.findViewById(R.id.stows_view);
         }
     }
 
