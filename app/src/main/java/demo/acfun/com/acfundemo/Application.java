@@ -1,6 +1,6 @@
 package demo.acfun.com.acfundemo;
 
-import com.android.helputils.LogUtils;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.model.HttpHeaders;
 import com.lzy.okhttputils.model.HttpParams;

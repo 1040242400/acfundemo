@@ -2,24 +2,21 @@ package demo.acfun.com.acfundemo.adapter;
 
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.helputils.DensityUtil;
-import com.android.helputils.LogUtils;
+import demo.acfun.com.acfundemo.utils.DensityUtil;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;

@@ -1,6 +1,6 @@
 
 
-package com.android.helputils;
+package demo.acfun.com.acfundemo.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

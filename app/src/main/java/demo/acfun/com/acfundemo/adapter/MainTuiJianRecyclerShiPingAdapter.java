@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.android.helputils.DensityUtil;
-import com.android.helputils.StringUtils;
-import com.felipecsl.gifimageview.library.GifImageView;
+import demo.acfun.com.acfundemo.utils.DensityUtil;
+import demo.acfun.com.acfundemo.utils.StringUtils;
+
 import com.joooonho.SelectableRoundedImageView;
 import com.squareup.picasso.Picasso;
 

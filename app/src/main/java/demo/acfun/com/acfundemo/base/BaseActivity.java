@@ -1,4 +1,4 @@
-package demo.acfun.com.acfundemo;
+package demo.acfun.com.acfundemo.base;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
-import com.android.helputils.LogUtils;
+import demo.acfun.com.acfundemo.R;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 import com.lzy.okhttputils.OkHttpUtils;
 
 import demo.acfun.com.acfundemo.ui.MainActivity;

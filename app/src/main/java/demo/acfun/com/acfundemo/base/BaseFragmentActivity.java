@@ -1,10 +1,10 @@
-package demo.acfun.com.acfundemo;
+package demo.acfun.com.acfundemo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
-import com.android.helputils.LogUtils;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 
 /**
  * Created by chen on 16/6/15.

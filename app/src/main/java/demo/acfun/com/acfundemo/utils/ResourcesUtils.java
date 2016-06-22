@@ -1,4 +1,4 @@
-package com.android.helputils;
+package demo.acfun.com.acfundemo.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

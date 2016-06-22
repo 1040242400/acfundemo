@@ -1,6 +1,6 @@
 
 
-package com.android.helputils;
+package demo.acfun.com.acfundemo.utils;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;

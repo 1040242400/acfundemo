@@ -6,7 +6,7 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.widget.ImageView;
 
-import demo.acfun.com.acfundemo.BaseActivity;
+import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 
 /**

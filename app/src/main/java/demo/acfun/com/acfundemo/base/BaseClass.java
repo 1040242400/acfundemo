@@ -1,4 +1,4 @@
-package demo.acfun.com.acfundemo;
+package demo.acfun.com.acfundemo.base;
 
 /**
  * Created by chen on 16/6/15.

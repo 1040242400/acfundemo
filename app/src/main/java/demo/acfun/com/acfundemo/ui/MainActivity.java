@@ -20,7 +20,7 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.acfun.com.acfundemo.BaseActivity;
+import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainViewPagerAdapter;
 

@@ -1,6 +1,6 @@
 
 
-package com.android.helputils;
+package demo.acfun.com.acfundemo.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

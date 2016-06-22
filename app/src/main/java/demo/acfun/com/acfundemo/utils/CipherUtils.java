@@ -1,5 +1,5 @@
 
-package com.android.helputils;
+package demo.acfun.com.acfundemo.utils;
 
 import android.util.Base64;
 

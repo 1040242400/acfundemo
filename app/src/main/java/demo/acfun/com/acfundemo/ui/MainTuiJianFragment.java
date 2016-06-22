@@ -1,6 +1,5 @@
 package demo.acfun.com.acfundemo.ui;
 
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,17 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.helphttp.AppHttp;
-import com.android.helputils.DensityUtil;
-import com.android.helputils.LogUtils;
-import com.lzy.okhttputils.OkHttpUtils;
-import com.lzy.okhttputils.callback.StringCallback;
-
-import org.json.JSONException;
+import demo.acfun.com.acfundemo.network.AppHttp;
 
 import java.util.List;
 
-import demo.acfun.com.acfundemo.BaseFragment;
+import demo.acfun.com.acfundemo.base.BaseFragment;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainTuiJianRecyclerAdapter;
 import demo.acfun.com.acfundemo.entity.TuiJianEntity;
