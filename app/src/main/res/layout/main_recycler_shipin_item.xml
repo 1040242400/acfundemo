@@ -51,4 +51,10 @@
         android:text="more"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/font_size_m" />
+
+    <View
+        android:id="@+id/mar_view"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/e" />
 </LinearLayout>

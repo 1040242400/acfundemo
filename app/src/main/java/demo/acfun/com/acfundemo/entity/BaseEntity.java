@@ -1,9 +1,11 @@
 package demo.acfun.com.acfundemo.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by chen on 16/6/15.
  */
-public class BaseEntity {
+public class BaseEntity implements Serializable {
 
     /**
      * code : 200

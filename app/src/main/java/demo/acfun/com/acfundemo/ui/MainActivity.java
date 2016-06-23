@@ -23,6 +23,7 @@ import java.util.List;
 import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainViewPagerAdapter;
+import demo.acfun.com.acfundemo.network.AppHttp;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,8 +37,10 @@ public class MainActivity extends BaseActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
+
+        //下载欢迎图片文件
+        AppHttp.getWelcomeImg(MainActivity.this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

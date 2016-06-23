@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import demo.acfun.com.acfundemo.utils.DensityUtil;
 import demo.acfun.com.acfundemo.utils.LogUtils;
+
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
@@ -152,7 +153,21 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                     listener.onItemItemClick(position, subPosition);
                 }
             }));
-            shiPinViewHolder.more.setText("查看更多");
+
+            if (itemEntity.getMenuBean() == null) {
+                shiPinViewHolder.more.setVisibility(View.GONE);
+            } else {
+                shiPinViewHolder.more.setVisibility(View.VISIBLE);
+                shiPinViewHolder.more.setText(itemEntity.getMenuBean().getName());
+            }
+
+            if (position < getItemCount() - 1) {
+                if (entitys.get(position + 1).getType().getId() == TuiJianEntity.Hengfu) {
+                    shiPinViewHolder.mar_view.setVisibility(View.GONE);
+                } else {
+                    shiPinViewHolder.mar_view.setVisibility(View.VISIBLE);
+                }
+            }
 
         } else if (holder instanceof HengFuViewHolder) {
             HengFuViewHolder hengFuViewHolder = (HengFuViewHolder) holder;
@@ -203,6 +218,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         public ImageView titleIcon;
         public TextView title, more;
         public RecyclerView recyclerView;
+        public View mar_view;
 
         public ShiPinViewHolder(View contentView) {
             super(contentView);
@@ -210,7 +226,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
             title = (TextView) contentView.findViewById(R.id.title_view);
             more = (TextView) contentView.findViewById(R.id.more_view);
             recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
-
+            mar_view = (View) contentView.findViewById(R.id.mar_view);
         }
     }
 
@@ -220,10 +236,12 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
     public class HengFuViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView image;
+        public View mar_view;
 
         public HengFuViewHolder(View contentView) {
             super(contentView);
             image = (ImageView) contentView.findViewById(R.id.image_view);
+            mar_view = (View) contentView.findViewById(R.id.mar_view);
         }
     }
 

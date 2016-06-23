@@ -87,7 +87,7 @@ public class MainTuiJianFragment extends BaseFragment {
             });
             recyclerView.setAdapter(recyclerAdapter);
         } else {
-//            recyclerView.getAdapter().notifyDataSetChanged();
+            recyclerView.getAdapter().notifyDataSetChanged();
         }
 
     }

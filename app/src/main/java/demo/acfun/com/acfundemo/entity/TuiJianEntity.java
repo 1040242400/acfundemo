@@ -71,7 +71,17 @@ public class TuiJianEntity extends BaseEntity {
      * url : 2812284
      */
 
-    private List<ContentsBean> contents;
+    public List<ContentsBean> contents;
+
+    public MenuBean menuBean;
+
+    public MenuBean getMenuBean() {
+        return menuBean;
+    }
+
+    public void setMenuBean(MenuBean menuBean) {
+        this.menuBean = menuBean;
+    }
 
     public int getBelong() {
         return belong;
@@ -209,6 +219,7 @@ public class TuiJianEntity extends BaseEntity {
         this.contents = contents;
     }
 
+
     public static class TypeBean {
         private int id;
         private String name;
@@ -251,6 +262,7 @@ public class TuiJianEntity extends BaseEntity {
         private String title;
         private String url;
         private VisitBean visit;
+
 
         public int getActionId() {
             return actionId;
@@ -339,6 +351,7 @@ public class TuiJianEntity extends BaseEntity {
         public void setVisit(VisitBean visit) {
             this.visit = visit;
         }
+
     }
 
     public static class VisitBean {
@@ -419,4 +432,100 @@ public class TuiJianEntity extends BaseEntity {
         }
     }
 
+
+    public static class MenuBean {
+        /**
+         * actionId : 6
+         * channelId : 155
+         * hide : 0
+         * id : 4
+         * image :
+         * name : 更多番剧内容
+         * regionId : 7
+         * sort : 0
+         * url :
+         */
+
+        private int actionId;
+        private int channelId;
+        private int hide;
+        private int id;
+        private String image;
+        private String name;
+        private int regionId;
+        private int sort;
+        private String url;
+
+        public int getActionId() {
+            return actionId;
+        }
+
+        public void setActionId(int actionId) {
+            this.actionId = actionId;
+        }
+
+        public int getChannelId() {
+            return channelId;
+        }
+
+        public void setChannelId(int channelId) {
+            this.channelId = channelId;
+        }
+
+        public int getHide() {
+            return hide;
+        }
+
+        public void setHide(int hide) {
+            this.hide = hide;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getImage() {
+            return image;
+        }
+
+        public void setImage(String image) {
+            this.image = image;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getRegionId() {
+            return regionId;
+        }
+
+        public void setRegionId(int regionId) {
+            this.regionId = regionId;
+        }
+
+        public int getSort() {
+            return sort;
+        }
+
+        public void setSort(int sort) {
+            this.sort = sort;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+    }
 }
