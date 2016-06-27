@@ -20,24 +20,41 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainViewPagerAdapter;
+import demo.acfun.com.acfundemo.data.DaggerTestComponent;
+import demo.acfun.com.acfundemo.data.TestModule;
 import demo.acfun.com.acfundemo.network.AppHttp;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
     private SmartTabLayout tabLayout;
     private ViewPager viewPager;
     private String[] tabList = new String[]{"关注", "推荐", "番剧", "娱乐", "文章", "频道"};
     private List<Fragment> viewList;
 
 
+    @Inject
+    @Named("name")
+    String name;
+
+    @Inject
+    @Named("msg")
+    String msg;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DaggerTestComponent.builder().testModule(new TestModule()).build().inject(MainActivity.this);
+        LogUtils.d("name==" + name);
+        LogUtils.d("msg==" + msg);
 
         //下载欢迎图片文件
         AppHttp.getWelcomeImg(MainActivity.this);

@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.callback.StringCallback;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -84,7 +85,6 @@ public class AppHttp {
 
 
     public static void getMainTuijian(final Context context, final AppHttpCallBack appHttpCallBack) {
-
         OkHttpUtils.get("http://api.aixifan.com/regions?belong=11&loadCount=-1&channelId=63")//
                 .tag(context)//
                 .execute(new StringCallback() {
