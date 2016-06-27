@@ -20,7 +20,7 @@ import java.util.List;
 import demo.acfun.com.acfundemo.base.BaseFragment;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainTuiJianRecyclerAdapter;
-import demo.acfun.com.acfundemo.entity.TuiJianEntity;
+import demo.acfun.com.acfundemo.model.TuiJianEntity;
 import okhttp3.Request;
 import okhttp3.Response;
 

@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import demo.acfun.com.acfundemo.R;
-import demo.acfun.com.acfundemo.entity.TuiJianEntity;
+import demo.acfun.com.acfundemo.model.TuiJianEntity;
 
 /**
  * Created by chen on 16/6/20.

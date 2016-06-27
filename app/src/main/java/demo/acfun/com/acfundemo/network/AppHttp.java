@@ -1,8 +1,6 @@
 package demo.acfun.com.acfundemo.network;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
@@ -23,11 +21,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import demo.acfun.com.acfundemo.entity.TuiJianEntity;
-import demo.acfun.com.acfundemo.entity.WelComeEntity;
+import demo.acfun.com.acfundemo.model.TuiJianEntity;
+import demo.acfun.com.acfundemo.model.WelComeEntity;
 import demo.acfun.com.acfundemo.utils.BitmapUtils;
 import demo.acfun.com.acfundemo.utils.SPUtils;
-import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 

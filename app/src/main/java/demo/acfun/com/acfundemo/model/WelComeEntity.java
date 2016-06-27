@@ -1,4 +1,4 @@
-package demo.acfun.com.acfundemo.entity;
+package demo.acfun.com.acfundemo.model;
 
 import java.io.Serializable;
 
