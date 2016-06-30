@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,52 +15,39 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainViewPagerAdapter;
-import demo.acfun.com.acfundemo.data.DaggerTestComponent;
-import demo.acfun.com.acfundemo.data.TestModule;
 import demo.acfun.com.acfundemo.network.AppHttp;
 import demo.acfun.com.acfundemo.utils.LogUtils;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private DrawerLayout drawer;
+    private NavigationView navigationView;
+    private LinearLayout custom_toolbar;
     private SmartTabLayout tabLayout;
     private ViewPager viewPager;
     private String[] tabList = new String[]{"关注", "推荐", "番剧", "娱乐", "文章", "频道"};
     private List<Fragment> viewList;
 
 
-    @Inject
-    @Named("name")
-    String name;
-
-    @Inject
-    @Named("msg")
-    String msg;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerTestComponent.builder().testModule(new TestModule()).build().inject(MainActivity.this);
-        LogUtils.d("name==" + name);
-        LogUtils.d("msg==" + msg);
-
         //下载欢迎图片文件
         AppHttp.getWelcomeImg(MainActivity.this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -71,15 +59,22 @@ public class MainActivity extends BaseActivity
             }
         });
 
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        custom_toolbar = (LinearLayout) findViewById(R.id.custom_toolbar);
+        custom_toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawer.isDrawerOpen(navigationView)) {
+                    drawer.closeDrawer(navigationView);
+                } else {
+                    drawer.openDrawer(navigationView);
+                }
+            }
+        });
 
         initTabLayoutViewPager();
     }
@@ -116,7 +111,7 @@ public class MainActivity extends BaseActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_toolbar_menu, menu);
         return true;
     }
 
@@ -125,13 +120,13 @@ public class MainActivity extends BaseActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            toLeftStartActivity(new Intent(this, LogInActivity.class));
-            return true;
-        }
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            toLeftStartActivity(new Intent(this, LogInActivity.class));
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }

@@ -8,9 +8,15 @@ import android.widget.ImageView;
 
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.base.BaseActivity;
+import demo.acfun.com.acfundemo.model.BaseEntity;
 import demo.acfun.com.acfundemo.model.WelComeEntity;
+import demo.acfun.com.acfundemo.network.AppHttp;
 import demo.acfun.com.acfundemo.utils.BitmapUtils;
 import demo.acfun.com.acfundemo.utils.SPUtils;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by chen on 16/6/22.
@@ -44,5 +50,18 @@ public class WelcomeActivity extends BaseActivity {
                 finish();
             }
         }, 2000);
+
+//        Call<ResponseBody> call = AppHttp.getRetrofitApi().getA("101010100");
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Response<ResponseBody> response) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable t) {
+//
+//            }
+//        });
     }
 }

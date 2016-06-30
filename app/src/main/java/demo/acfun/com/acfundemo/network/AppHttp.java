@@ -28,14 +28,54 @@ import demo.acfun.com.acfundemo.utils.BitmapUtils;
 import demo.acfun.com.acfundemo.utils.SPUtils;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * Created by chen on 16/6/20.
  */
 public class AppHttp {
 
+    public static String BASE_URL = "http://www.weather.com.cn/";
+
     public interface AppHttpCallBack {
         void returnEntity(Object object, boolean isFromCache, Request request, Response response);
+    }
+
+    public static AppHttp appHttp;
+
+    public static AppHttp getInstance() {
+        if (appHttp == null) {
+            appHttp = new AppHttp();
+        }
+        return appHttp;
+    }
+
+    public static Retrofit retrofit;
+
+    public static RetrofitApi retrofitApi;
+
+    public static Retrofit getRetrofit() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder().baseUrl(BASE_URL).build();
+        }
+        return retrofit;
+    }
+
+    public static RetrofitApi getRetrofitApi() {
+        if (retrofitApi == null) {
+            retrofitApi = getRetrofit().create(RetrofitApi.class);
+        }
+
+        return retrofitApi;
+    }
+
+    public interface RetrofitApi {
+        @GET("adat/sk/{cityId}.html")
+        Call<ResponseBody> getA(@Path("cityId") String cityId);
     }
 
     public static void getWelcomeImg(final Context context) {
@@ -146,8 +186,10 @@ public class AppHttp {
 
     }
 
+    /**
+     * 获取到assets文件，并以输出流形式返回。
+     */
     public static String getFileJson(Context context, String fileName) {
-         /*获取到assets文件，并以输出流形式返回。*/
         InputStream is = context.getClass().getClassLoader().getResourceAsStream("assets/" + fileName);
         InputStreamReader streamReader = new InputStreamReader(is);
         BufferedReader reader = new BufferedReader(streamReader);

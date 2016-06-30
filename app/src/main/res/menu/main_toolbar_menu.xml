@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_download"
+        android:icon="@mipmap/ic_ab_download"
+        android:orderInCategory="80"
+        android:title="download"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_history"
+        android:icon="@mipmap/ic_ab_histoty"
+        android:orderInCategory="90"
+        android:title="history"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@mipmap/ic_ab_search"
+        android:orderInCategory="100"
+        android:title="search"
+        app:showAsAction="ifRoom" />
+</menu>
