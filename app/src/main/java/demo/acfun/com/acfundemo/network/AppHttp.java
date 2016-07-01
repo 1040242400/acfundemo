@@ -1,15 +1,17 @@
 package demo.acfun.com.acfundemo.network;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.callback.StringCallback;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -102,19 +104,37 @@ public class AppHttp {
                 WelComeEntity oldWelcomeEntity = (WelComeEntity) SPUtils.readObject(context, SPUtils.WELCOME_ENTITY);
                 if (oldWelcomeEntity == null || !oldWelcomeEntity.getData().getPic().equals(welComeEntity.getData().getPic())) {
                     SPUtils.put(context, SPUtils.WELCOME_ENTITY, welComeEntity);
-                    final ImageView img = new ImageView(context);
-                    Picasso.with(context).load(welComeEntity.getData().getPic()).into(img, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            welComeEntity.getData().setBase64pic(BitmapUtils.bitmapToBase64(((BitmapDrawable) img.getDrawable()).getBitmap()));
-                            SPUtils.saveObject(context, SPUtils.WELCOME_ENTITY, welComeEntity);
-                        }
+                    ImageLoader.getInstance().displayImage(welComeEntity.getData().getPic(), new ImageView(context),
+                            new ImageLoadingListener() {
 
-                        @Override
-                        public void onError() {
+                                @Override
+                                public void onLoadingStarted(String arg0, View arg1) {
+                                    // TODO Auto-generated method stub
 
-                        }
-                    });
+                                }
+
+                                @Override
+                                public void onLoadingFailed(String arg0, View arg1,
+                                                            FailReason arg2) {
+                                    // TODO Auto-generated method stub
+
+                                }
+
+                                @Override
+                                public void onLoadingComplete(String arg0, View arg1,
+                                                              Bitmap arg2) {
+                                    // TODO Auto-generated method stub
+                                    welComeEntity.getData().setBase64pic(BitmapUtils.bitmapToBase64(arg2));
+                                    SPUtils.saveObject(context, SPUtils.WELCOME_ENTITY, welComeEntity);
+                                }
+
+                                @Override
+                                public void onLoadingCancelled(String arg0, View arg1) {
+                                    // TODO Auto-generated method stub
+
+                                }
+                            });
+
                 }
 
             }

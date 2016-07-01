@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import demo.acfun.com.acfundemo.utils.DensityUtil;
+import demo.acfun.com.acfundemo.widget.ImageLoaderUtils;
 import demo.acfun.com.acfundemo.utils.LogUtils;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -23,7 +24,7 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
-import com.squareup.picasso.Picasso;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.HashMap;
 import java.util.List;
@@ -142,7 +143,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         } else if (holder instanceof ShiPinViewHolder) {
             ShiPinViewHolder shiPinViewHolder = (ShiPinViewHolder) holder;
-            Picasso.with(context).load(itemEntity.getImage()).into(shiPinViewHolder.titleIcon);
+            ImageLoader.getInstance().displayImage(itemEntity.getImage(), shiPinViewHolder.titleIcon, ImageLoaderUtils.getOptionsDefault());
             shiPinViewHolder.title.setText(itemEntity.getName());
             shiPinViewHolder.recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
             shiPinViewHolder.recyclerView.addItemDecoration(new ItemDecoration(DensityUtil.dp2px(context, 10), 2, itemEntity.getContents().size()));
@@ -171,9 +172,10 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
         } else if (holder instanceof HengFuViewHolder) {
             HengFuViewHolder hengFuViewHolder = (HengFuViewHolder) holder;
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) ((DensityUtil.getWindowsWidth(context) - (DensityUtil.dp2px(context, 16) * 2)) * 0.2971));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(DensityUtil.getWindowsWidth(context) - (DensityUtil.dp2px(context, 16) * 2), (int) ((DensityUtil.getWindowsWidth(context) - (DensityUtil.dp2px(context, 16) * 2)) * 0.2971));
+            params.setMargins(DensityUtil.dp2px(context, 16), 0, DensityUtil.dp2px(context, 16), 0);
 //            hengFuViewHolder.image.setLayoutParams(params);
-            Picasso.with(context).load(itemEntity.getContents().get(0).getImage()).into(hengFuViewHolder.image);
+            ImageLoader.getInstance().displayImage(itemEntity.getContents().get(0).getImage(), hengFuViewHolder.image, ImageLoaderUtils.getOptionsDefault());
         } else if (holder instanceof XiangJiaoBangViewHolder) {
             XiangJiaoBangViewHolder xiangJiaoBangViewHolder = (XiangJiaoBangViewHolder) holder;
         } else if (holder instanceof FanJuViewHolder) {

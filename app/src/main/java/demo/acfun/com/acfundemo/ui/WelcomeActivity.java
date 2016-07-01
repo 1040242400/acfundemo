@@ -51,17 +51,5 @@ public class WelcomeActivity extends BaseActivity {
             }
         }, 2000);
 
-//        Call<ResponseBody> call = AppHttp.getRetrofitApi().getA("101010100");
-//        call.enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(Response<ResponseBody> response) {
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable t) {
-//
-//            }
-//        });
     }
 }

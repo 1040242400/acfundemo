@@ -5,23 +5,27 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.joooonho.SelectableRoundedImageView
+        <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
             android:id="@+id/image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:scaleType="fitXY"
-            app:sriv_border_color="@color/e"
-            app:sriv_border_width="1px"
-            app:sriv_left_bottom_corner_radius="5dp"
-            app:sriv_left_top_corner_radius="5dp"
-            app:sriv_oval="false"
-            app:sriv_right_bottom_corner_radius="5dp"
-            app:sriv_right_top_corner_radius="5dp" />
+            fresco:fadeDuration="0"
+            fresco:failureImage="@color/colorPrimary"
+            fresco:failureImageScaleType="fitXY"
+            fresco:placeholderImage="@color/white"
+            fresco:placeholderImageScaleType="fitXY"
+            fresco:retryImage="@color/white"
+            fresco:retryImageScaleType="fitXY"
+            fresco:roundWithOverlayColor="@color/white"
+            fresco:roundedCornerRadius="4dp"
+            fresco:roundingBorderColor="@color/e"
+            fresco:roundingBorderWidth="1px" />
 
         <LinearLayout
             android:id="@+id/count_view"

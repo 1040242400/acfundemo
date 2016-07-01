@@ -5,6 +5,8 @@
 
     <uses-sdk tools:overrideLibrary="com.gc.materialdesign" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".Application"
         android:allowBackup="true"

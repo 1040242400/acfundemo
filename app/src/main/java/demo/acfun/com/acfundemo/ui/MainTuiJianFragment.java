@@ -35,7 +35,7 @@ public class MainTuiJianFragment extends BaseFragment {
 
     protected View getContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.main_tuijian_fragment, null);
-
+        materialishProgress.show();
         initView(contentView);
 
         laodData();
@@ -65,6 +65,7 @@ public class MainTuiJianFragment extends BaseFragment {
             @Override
             public void returnEntity(Object object, boolean isFromCache, Request request, Response response) {
                 swipeLayout.setRefreshing(false);
+                materialishProgress.dismiss();
                 entitys = (List<TuiJianEntity>) object;
                 showData();
             }

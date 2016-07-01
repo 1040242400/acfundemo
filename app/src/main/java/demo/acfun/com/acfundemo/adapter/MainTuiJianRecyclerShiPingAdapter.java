@@ -1,18 +1,24 @@
 package demo.acfun.com.acfundemo.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import demo.acfun.com.acfundemo.utils.DensityUtil;
+import demo.acfun.com.acfundemo.utils.ImageUtils;
+import demo.acfun.com.acfundemo.widget.ImageLoaderUtils;
 import demo.acfun.com.acfundemo.utils.StringUtils;
 
-import com.joooonho.SelectableRoundedImageView;
-import com.squareup.picasso.Picasso;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -70,23 +76,32 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
             }
         });
         TuiJianEntity.ContentsBean itemEntity = entitys.get(position);
-        ViewHolder viewHolder = (ViewHolder) holder;
+        final ViewHolder viewHolder = (ViewHolder) holder;
 
         viewHolder.title.setText(itemEntity.getTitle());
         FrameLayout.LayoutParams imgP = new FrameLayout.LayoutParams((int) ((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2), (int) (((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2) * 0.5625));
         viewHolder.imageView.setLayoutParams(imgP);
-        Picasso.with(context).load(itemEntity.getImage()).into(viewHolder.imageView);
+
+        DraweeController draweeController =
+                Fresco.newDraweeControllerBuilder()
+                        .setUri(Uri.parse(itemEntity.getImage()))
+                        .setAutoPlayAnimations(true) // 设置加载图片完成后是否直接进行播放
+                        .build();
+
+        viewHolder.imageView.setController(draweeController);
+//        ImageLoader.getInstance().displayImage(itemEntity.getImage(), viewHolder.imageView, ImageLoaderUtils.getOptionsRounde(context));
+
         viewHolder.views.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getViews(), null));
         viewHolder.stows.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getStows(), null));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public SelectableRoundedImageView imageView;
+        public SimpleDraweeView imageView;
         public TextView title, views, stows;
 
         public ViewHolder(View contextView) {
             super(contextView);
-            imageView = (SelectableRoundedImageView) contextView.findViewById(R.id.image_view);
+            imageView = (SimpleDraweeView) contextView.findViewById(R.id.image_view);
             title = (TextView) contextView.findViewById(R.id.title_view);
             views = (TextView) contextView.findViewById(R.id.views_view);
             stows = (TextView) contextView.findViewById(R.id.stows_view);

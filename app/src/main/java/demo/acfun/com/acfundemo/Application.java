@@ -1,26 +1,12 @@
 package demo.acfun.com.acfundemo;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-
+import demo.acfun.com.acfundemo.widget.ImageLoaderUtils;
 import demo.acfun.com.acfundemo.utils.LogUtils;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.model.HttpHeaders;
 import com.lzy.okhttputils.model.HttpParams;
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
-import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
-import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-import com.nostra13.universalimageloader.utils.StorageUtils;
-
-import java.io.File;
 
 /**
  * Created by chen on 16/6/15.
@@ -33,50 +19,8 @@ public class Application extends android.app.Application {
         LogUtils.LOG_DEBUG = true;
         initOkHttp();
 
-        initImageLoader(getApplicationContext());
-    }
-
-    private static void initImageLoader(Context context) {
-        File cacheDir = StorageUtils.getOwnCacheDirectory(context,
-                "/sykjqz/cache");// ����·��
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)// �������ص�ͼƬ�Ƿ񻺴����ڴ���
-                .cacheOnDisk(true)// �������ص�ͼƬ�Ƿ񻺴���SD����
-                .considerExifParams(true) // �Ƿ���JPEGͼ��EXIF��������ת����ת��
-                .imageScaleType(ImageScaleType.EXACTLY)// ����ͼƬ����εı��뷽ʽ��ʾ
-                .bitmapConfig(Bitmap.Config.RGB_565)// ����ͼƬ�Ľ�������
-                .resetViewBeforeLoading(true)// ����ͼƬ������ǰ�Ƿ����ã���λ
-                .displayer(new FadeInBitmapDisplayer(100))// �Ƿ�ͼƬ���غú���Ķ���ʱ��
-                .build();// �������
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                context)
-                .threadPoolSize(3)
-                .threadPriority(Thread.NORM_PRIORITY - 2)
-                .denyCacheImageMultipleSizesInMemory()
-                .memoryCache(new WeakMemoryCache())
-                .memoryCacheSize(2 * 1024 * 1024)
-                .diskCacheSize(50 * 1024 * 1024)
-                .diskCacheFileNameGenerator(new HashCodeFileNameGenerator())
-                .tasksProcessingOrder(QueueProcessingType
-                        .LIFO)
-                .diskCacheFileCount(100)
-                .diskCache(new UnlimitedDiskCache(cacheDir))
-                .defaultDisplayImageOptions(options)
-                .imageDownloader(
-                        new BaseImageDownloader(context, 5 * 1000, 30 * 1000))
-                .build();
-        ImageLoader.getInstance().init(config);
-
-//        options = new DisplayImageOptions.Builder()
-//                .showImageOnLoading(R.drawable.icon_stub)
-//                // ���ڼ���
-//                .showImageForEmptyUri(R.drawable.icon_empty)
-//                // ��ͼƬ
-//                .showImageOnFail(R.drawable.icon_error)
-//                // ����ͼƬ
-//                .cacheInMemory(true).cacheOnDisk(true).considerExifParams(true)
-//                .bitmapConfig(Bitmap.Config.RGB_565).build();
+        ImageLoaderUtils.initFresco(getApplicationContext());
+        ImageLoaderUtils.initImageLoader(getApplicationContext());
     }
 
     private void initOkHttp() {
