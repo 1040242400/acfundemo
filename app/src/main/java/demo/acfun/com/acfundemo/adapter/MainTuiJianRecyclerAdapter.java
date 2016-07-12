@@ -38,7 +38,7 @@ import demo.acfun.com.acfundemo.model.TuiJianEntity;
 public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater mLayoutInflater;
-    private List<TuiJianEntity> entitys;
+    private List<TuiJianEntity.Data> tuijianData;
     private OnRecyclerViewItemClickListener listener;
 
     private boolean loadImg = true;
@@ -50,9 +50,17 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         void onItemItemClick(int position, int subPosition);
     }
 
-    public MainTuiJianRecyclerAdapter(Context context, List<TuiJianEntity> entitys, OnRecyclerViewItemClickListener listener) {
+    public List<TuiJianEntity.Data> getTuijianData() {
+        return tuijianData;
+    }
+
+    public void setTuijianData(List<TuiJianEntity.Data> tuijianData) {
+        this.tuijianData = tuijianData;
+    }
+
+    public MainTuiJianRecyclerAdapter(Context context, List<TuiJianEntity.Data> entitys, OnRecyclerViewItemClickListener listener) {
         this.context = context;
-        this.entitys = entitys;
+        this.tuijianData = entitys;
         this.mLayoutInflater = LayoutInflater.from(context);
         this.listener = listener;
     }
@@ -62,7 +70,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      */
     @Override
     public int getItemViewType(int position) {
-        return entitys.get(position).getType().getId();
+        return tuijianData.get(position).getType().getId();
     }
 
     /**
@@ -106,7 +114,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 listener.onItemClick(position);
             }
         });
-        TuiJianEntity itemEntity = entitys.get(position);
+        TuiJianEntity.Data itemEntity = tuijianData.get(position);
 
         if (holder instanceof LunBoViewHolder) {
             LunBoViewHolder lunBoViewHolder = (LunBoViewHolder) holder;
@@ -155,15 +163,15 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 }
             }));
 
-            if (itemEntity.getMenuBean() == null) {
-                shiPinViewHolder.more.setVisibility(View.GONE);
+            if (itemEntity.getMenus() == null) {
+                shiPinViewHolder.more_view.setVisibility(View.GONE);
             } else {
-                shiPinViewHolder.more.setVisibility(View.VISIBLE);
-                shiPinViewHolder.more.setText(itemEntity.getMenuBean().getName());
+                shiPinViewHolder.more_view.setVisibility(View.VISIBLE);
+                shiPinViewHolder.more.setText(itemEntity.getMenus().get(0).getName());
             }
 
             if (position < getItemCount() - 1) {
-                if (entitys.get(position + 1).getType().getId() == TuiJianEntity.Hengfu) {
+                if (tuijianData.get(position + 1).getType().getId() == TuiJianEntity.Hengfu) {
                     shiPinViewHolder.mar_view.setVisibility(View.GONE);
                 } else {
                     shiPinViewHolder.mar_view.setVisibility(View.VISIBLE);
@@ -187,7 +195,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public int getItemCount() {
-        return entitys.size();
+        return tuijianData.size();
     }
 
 
@@ -218,6 +226,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      */
     public class ShiPinViewHolder extends RecyclerView.ViewHolder {
         public ImageView titleIcon;
+        public LinearLayout more_view;
         public TextView title, more;
         public RecyclerView recyclerView;
         public View mar_view;
@@ -226,7 +235,8 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
             super(contentView);
             titleIcon = (ImageView) contentView.findViewById(R.id.title_icon_view);
             title = (TextView) contentView.findViewById(R.id.title_view);
-            more = (TextView) contentView.findViewById(R.id.more_view);
+            more_view = (LinearLayout) contentView.findViewById(R.id.more_view);
+            more = (TextView) contentView.findViewById(R.id.more);
             recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
             mar_view = (View) contentView.findViewById(R.id.mar_view);
         }

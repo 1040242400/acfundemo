@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import demo.acfun.com.acfundemo.network.AppHttp;
 
@@ -21,8 +22,9 @@ import demo.acfun.com.acfundemo.base.BaseFragment;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainTuiJianRecyclerAdapter;
 import demo.acfun.com.acfundemo.model.TuiJianEntity;
-import okhttp3.Request;
-import okhttp3.Response;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by chen on 16/6/7.
@@ -31,15 +33,13 @@ public class MainTuiJianFragment extends BaseFragment {
     private SwipeRefreshLayout swipeLayout;
     private RecyclerView recyclerView;
     private MainTuiJianRecyclerAdapter recyclerAdapter;
-    private List<TuiJianEntity> entitys;
+    private TuiJianEntity tuiJianEntity;
 
     protected View getContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.main_tuijian_fragment, null);
         materialishProgress.show();
         initView(contentView);
-
         laodData();
-
         return contentView;
     }
 
@@ -60,22 +60,34 @@ public class MainTuiJianFragment extends BaseFragment {
     }
 
     private void laodData() {
-        swipeLayout.setRefreshing(true);
-        AppHttp.getMainTuijian(MainTuiJianFragment.this.getActivity(), new AppHttp.AppHttpCallBack() {
-            @Override
-            public void returnEntity(Object object, boolean isFromCache, Request request, Response response) {
-                swipeLayout.setRefreshing(false);
-                materialishProgress.dismiss();
-                entitys = (List<TuiJianEntity>) object;
-                showData();
-            }
-        });
+        AppHttp.getInstance().getRetrofitApi().getTuijian("0", "-1")
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<TuiJianEntity>() {
+                    @Override
+                    public void onCompleted() {
+                        swipeLayout.setRefreshing(false);
+                        materialishProgress.dismiss();
+                    }
 
+                    @Override
+                    public void onError(Throwable e) {
+                        swipeLayout.setRefreshing(false);
+                        materialishProgress.dismiss();
+                        Toast.makeText(MainTuiJianFragment.this.getContext(), "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onNext(TuiJianEntity tuiJianEntity) {
+                        MainTuiJianFragment.this.tuiJianEntity = tuiJianEntity;
+                        showData();
+                    }
+                });
     }
 
     private void showData() {
         if (recyclerView.getAdapter() == null) {
-            recyclerAdapter = new MainTuiJianRecyclerAdapter(MainTuiJianFragment.this.getActivity(), entitys, new MainTuiJianRecyclerAdapter.OnRecyclerViewItemClickListener() {
+            recyclerAdapter = new MainTuiJianRecyclerAdapter(MainTuiJianFragment.this.getActivity(), tuiJianEntity.getData(), new MainTuiJianRecyclerAdapter.OnRecyclerViewItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
                     Snackbar.make(getView(), "item on click" + position, Snackbar.LENGTH_SHORT).show();
@@ -88,7 +100,8 @@ public class MainTuiJianFragment extends BaseFragment {
             });
             recyclerView.setAdapter(recyclerAdapter);
         } else {
-            recyclerView.getAdapter().notifyDataSetChanged();
+            recyclerAdapter.setTuijianData(tuiJianEntity.getData());
+            recyclerAdapter.notifyDataSetChanged();
         }
 
     }
@@ -104,21 +117,5 @@ public class MainTuiJianFragment extends BaseFragment {
         // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
         super.onStop();
     }
-
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 0:
-                    swipeLayout.setRefreshing(false);
-                    break;
-
-                default:
-                    break;
-
-            }
-            super.handleMessage(msg);
-        }
-    };
 
 }

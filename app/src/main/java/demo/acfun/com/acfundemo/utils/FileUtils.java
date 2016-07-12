@@ -32,6 +32,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.channels.FileChannel;
 import java.util.zip.GZIPInputStream;
@@ -309,6 +310,30 @@ public class FileUtils {
                 file.delete();
             }
         }
+    }
+
+    /**
+     * 获取到assets文件，并以输出流形式返回。
+     */
+    public static String getFileJson(Context context, String fileName) {
+        InputStream is = context.getClass().getClassLoader().getResourceAsStream("assets/" + fileName);
+        InputStreamReader streamReader = new InputStreamReader(is);
+        BufferedReader reader = new BufferedReader(streamReader);
+        String line;
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            while ((line = reader.readLine()) != null) {
+                // stringBuilder.append(line);
+                stringBuilder.append(line);
+            }
+            reader.close();
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+        return stringBuilder.toString();
     }
 
 

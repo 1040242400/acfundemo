@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
+import demo.acfun.com.acfundemo.Manage.UserManage;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.model.BaseEntity;
@@ -30,7 +31,7 @@ public class WelcomeActivity extends BaseActivity {
         setContentView(R.layout.welcome_activity);
         imageView = (ImageView) findViewById(R.id.image_view);
 
-        WelComeEntity welComeEntity = (WelComeEntity) SPUtils.readObject(WelcomeActivity.this, SPUtils.WELCOME_ENTITY);
+        WelComeEntity welComeEntity = (WelComeEntity) SPUtils.readObject(WelcomeActivity.this, UserManage.WELCOME_ENTITY);
         if (welComeEntity != null) {
             imageView.setImageBitmap(BitmapUtils.base64ToBitmap(welComeEntity.getData().getBase64pic()));
         }

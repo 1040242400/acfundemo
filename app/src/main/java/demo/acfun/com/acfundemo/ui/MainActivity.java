@@ -1,5 +1,7 @@
 package demo.acfun.com.acfundemo.ui;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -22,11 +24,18 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import demo.acfun.com.acfundemo.Manage.UserManage;
 import demo.acfun.com.acfundemo.base.BaseActivity;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainViewPagerAdapter;
+import demo.acfun.com.acfundemo.model.WelComeEntity;
 import demo.acfun.com.acfundemo.network.AppHttp;
 import demo.acfun.com.acfundemo.utils.LogUtils;
+import rx.Observer;
+import rx.Scheduler;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,15 +47,10 @@ public class MainActivity extends BaseActivity
     private String[] tabList = new String[]{"关注", "推荐", "番剧", "娱乐", "文章", "频道"};
     private List<Fragment> viewList;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //下载欢迎图片文件
-        AppHttp.getWelcomeImg(MainActivity.this);
-
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -155,4 +159,6 @@ public class MainActivity extends BaseActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

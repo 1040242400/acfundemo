@@ -6,11 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
-import demo.acfun.com.acfundemo.R;
-import demo.acfun.com.acfundemo.utils.LogUtils;
-
 import com.lzy.okhttputils.OkHttpUtils;
 
+import demo.acfun.com.acfundemo.R;
+import demo.acfun.com.acfundemo.utils.LogUtils;
 import demo.acfun.com.acfundemo.ui.MainActivity;
 
 /**
@@ -73,7 +72,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         //根据 Tag 取消请求
         OkHttpUtils.getInstance().cancelTag(this);
     }

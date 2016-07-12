@@ -19,9 +19,7 @@ import java.util.Map;
 
 
 public class SPUtils {
-    private static final String FILE_NAME = "SPUtils";
-    public static final String WELCOME_BITMAP = "welcome_bitmap";
-    public static final String WELCOME_ENTITY = "welcome_entity";
+    private static final String FILE_NAME = "AcfunSPUtils";
 
     public static void put(Context context, String key, Object object) {
         SharedPreferences sp = context.getSharedPreferences(FILE_NAME,

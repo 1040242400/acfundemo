@@ -7,18 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import demo.acfun.com.acfundemo.utils.DensityUtil;
-import demo.acfun.com.acfundemo.utils.ImageUtils;
-import demo.acfun.com.acfundemo.widget.ImageLoaderUtils;
 import demo.acfun.com.acfundemo.utils.StringUtils;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -31,7 +27,7 @@ import demo.acfun.com.acfundemo.model.TuiJianEntity;
 public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private LayoutInflater mLayoutInflater;
-    private List<TuiJianEntity.ContentsBean> entitys;
+    private List<TuiJianEntity.Data.Contents> tuijianDataContents;
 
     private OnRecyclerViewItemClickListener listener;
 
@@ -40,9 +36,9 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
     }
 
 
-    public MainTuiJianRecyclerShiPingAdapter(Context context, List<TuiJianEntity.ContentsBean> entitys, OnRecyclerViewItemClickListener listener) {
+    public MainTuiJianRecyclerShiPingAdapter(Context context, List<TuiJianEntity.Data.Contents> entitys, OnRecyclerViewItemClickListener listener) {
         this.context = context;
-        this.entitys = entitys;
+        this.tuijianDataContents = entitys;
         this.listener = listener;
         this.mLayoutInflater = LayoutInflater.from(context);
     }
@@ -54,7 +50,7 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
 
     @Override
     public int getItemCount() {
-        return entitys.size();
+        return tuijianDataContents.size();
     }
 
     @Override
@@ -75,7 +71,7 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
                 listener.onItemClick(position);
             }
         });
-        TuiJianEntity.ContentsBean itemEntity = entitys.get(position);
+        TuiJianEntity.Data.Contents itemEntity = tuijianDataContents.get(position);
         final ViewHolder viewHolder = (ViewHolder) holder;
 
         viewHolder.title.setText(itemEntity.getTitle());

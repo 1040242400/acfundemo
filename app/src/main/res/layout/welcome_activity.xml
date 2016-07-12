@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@mipmap/image_splash_illustration_port"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/bottom_image_view"
@@ -20,6 +20,4 @@
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:scaleType="centerCrop"
         android:src="@mipmap/flash_bottom" />
-
-
 </FrameLayout>
