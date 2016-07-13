@@ -40,6 +40,7 @@ public class MainTuiJianFragment extends BaseFragment {
         initErrorView(contentView, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hiddeErrorView();
                 materialishProgress.show();
                 laodData();
             }
@@ -82,8 +83,12 @@ public class MainTuiJianFragment extends BaseFragment {
                     @Override
                     public void onError(Throwable e) {
                         swipeLayout.setRefreshing(false);
-                        showErrorView(R.mipmap.ic_launcher, e.getMessage(), "点击刷新");
                         materialishProgress.dismiss();
+                        if (tuiJianEntity == null) {
+                            showErrorView(R.mipmap.ic_launcher, e.getMessage(), "点击刷新");
+                        } else {
+                            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
