@@ -1,9 +1,13 @@
 <resources>
 
     <dimen name="font_size_s">10sp</dimen>
+    <dimen name="font_size_ss">11sp</dimen>
     <dimen name="font_size_x">12sp</dimen>
+    <dimen name="font_size_xx">13sp</dimen>
     <dimen name="font_size_m">14sp</dimen>
+    <dimen name="font_size_mm">15sp</dimen>
     <dimen name="font_size_l">16sp</dimen>
+    <dimen name="font_size_ll">17sp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>

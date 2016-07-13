@@ -4,7 +4,7 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "demo.acfun.com.acfundemo"
         minSdkVersion 9
@@ -74,7 +74,6 @@ dependencies {
     compile "com.facebook.fresco:fresco:$FRESCO_VERSION"
     compile "com.facebook.fresco:animated-base-support:$FRESCO_VERSION"
     compile "com.facebook.fresco:animated-gif:$FRESCO_VERSION"
-
     //picasso
     compile 'com.squareup.picasso:picasso:2.5.2'
 }

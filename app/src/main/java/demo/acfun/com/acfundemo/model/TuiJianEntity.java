@@ -15,26 +15,27 @@ public class TuiJianEntity extends BaseEntity {
     public final static int FanJu = 3;
     public final static int WenZhang = 2;
 
-
-    /**
+     /**
      * belong : 0
-     * channelId : 1
-     * contentCount : 4
-     * contents : [{"actionId":1,"channelId":106,"hide":0,"id":47294,"image":"http://imgs.aixifan.com/content/2016_07_11/1468220722.jpg","intro":"十大畅销漫画，有你喜欢的不。","regionId":9,"releaseDate":1468221102000,"releasedAt":1468290037000,"shareTagShow":0,"status":2,"subTitle":"","title":"岛国十大畅销漫画评选","url":"2884956","visit":{"comments":20,"danmakuSize":17,"goldBanana":25,"score":0,"stows":257,"ups":0,"views":4628}},{"actionId":1,"channelId":106,"hide":0,"id":47292,"image":"http://imgs.aixifan.com/content/2016_07_09/1468096055.gif","intro":"谁告诉我这暴雨梨花针的功夫能练习几年啊！本周柯南已经超神，死神小学生已经忍不住开始亲自动手了。。【听说关注签名有红包拿，感觉关注一波吧】","regionId":9,"releaseDate":1468096167000,"releasedAt":1468289890000,"shareTagShow":0,"status":2,"subTitle":"","title":"柯南新技能已上线：小柯飞刀","url":"2881534","visit":{"comments":97,"danmakuSize":92,"goldBanana":15,"score":0,"stows":307,"ups":0,"views":34448}},{"actionId":1,"channelId":106,"hide":0,"id":47289,"image":"http://imgs.aixifan.com/cms/2016_07_12/1468289723724.png","intro":"无论甜党咸党，在这个问题上，我们只有一个立场","regionId":9,"releaseDate":1468237340000,"releasedAt":1468289726000,"shareTagShow":0,"status":2,"subTitle":"","title":"号外！猴子要南海，鹰酱当后台","url":"2885757","visit":{"comments":63,"danmakuSize":37,"goldBanana":259,"score":0,"stows":179,"ups":0,"views":18534}},{"actionId":1,"channelId":133,"hide":0,"id":47285,"image":"http://imgs.aixifan.com/cms/2016_07_12/1468289633822.png","intro":"链接：http://pan.baidu.com/s/1c2p119e 密码：k02n","regionId":9,"releaseDate":1468057224000,"releasedAt":1468289636000,"shareTagShow":0,"status":2,"subTitle":"","title":"佐仓大法好！内田大法好！","url":"2880540","visit":{"comments":20,"danmakuSize":47,"goldBanana":20,"score":0,"stows":656,"ups":0,"views":14584}}]
+     * channelId : 0
+     * contentCount : 3
+     * contents : [{"channelId":86,"image":"http://imgs.aixifan.com/content/2016_07_11/1468239270.jpg","intro":"你经历过毕业吗？本期视频献给所有已经毕业&amp;amp;即将毕业的人。也算是送给自己的毕业礼物了：）微信订阅：dapapi","owner":{"avatar":"http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201512/26181522wk4rjc21.jpg","id":2526701,"name":"papi酱"},"regionId":183,"releaseDate":1468239598000,"status":2,"title":"papi酱\u2014\u2014本期视频献给所有已经毕业和即将毕业的人","url":"2885831","visit":{"comments":465,"danmakuSize":476,"goldBanana":3012,"score":0,"stows":1312,"ups":0,"views":177369}},{"channelId":170,"image":"http://imgs.aixifan.com/content/2016_07_11/1468246183.jpg","intro":"【守望逗比】第五期 学医救不了ZZ队友  感谢大家的投稿，部分素材没插进去，下一期有合适的BGM会怼进去，感谢大家伙的支持哈","owner":{"avatar":"http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201606/211116021uhlm357.jpg","id":4927815,"name":"守望逗比"},"regionId":183,"releaseDate":1468246199000,"status":2,"title":"【守望逗比】第五期 学医救不了ZZ队友","url":"2886136","visit":{"comments":80,"danmakuSize":379,"goldBanana":2274,"score":0,"stows":1129,"ups":0,"views":71744}},{"channelId":141,"image":"http://imgs.aixifan.com/content/2016_07_11/1468249246.jpg","intro":"《一屋老友记》【粤语合辑】：http://www.acfun.tv/a/aa4956607\r<br/>微信bdtvb8提供该视频高清资源免费下载。另外，求5蕉支援，求弹幕，你们懂的！┑(￣▽ ￣)┍","owner":{"avatar":"http://cdn.aixifan.com/dotnet/20120923/style/image/avatar.jpg","id":4038098,"name":"郭女王SAMA"},"regionId":183,"releaseDate":1468249290000,"status":2,"title":"【TVB】 一屋老友记 14 【粤语中字】","url":"2886260","visit":{"comments":82,"danmakuSize":2082,"goldBanana":1502,"score":0,"stows":672,"ups":0,"views":103197}}]
      * goText :
-     * hide : 0
-     * id : 9
-     * image : http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201601/13165019vb13fuje.png
-     * menuCount : 1
-     * menus : [{"actionId":6,"channelId":1,"hide":0,"id":5,"image":"","name":"更多动画内容","regionId":9,"sort":0,"url":""}]
-     * name : 动画
+     * hide : 2
+     * id : 183
+     * image : http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201601/14190344l0kvp4fa.png
+     * menuCount : 0
+     * menus : [{"actionId":6,"channelId":63,"hide":0,"id":15,"image":"","name":"更多文章内容","regionId":21,"sort":0,"url":""}]
+     * name : 香蕉排行榜
      * platformId : 1
      * showLine : 1
-     * showMore : 1
+     * showMore : 0
      * showName : 1
-     * sort : 98
-     * type : {"id":1,"name":"视频","value":"videos"}
+     * sort : 101
+     * subTitle : 1
+     * type : {"id":12,"name":"视频_香蕉榜","value":"videos_banana_list"}
      * url :
+     * version : 4.1.0
      */
 
     private List<Data> data;
@@ -62,41 +63,38 @@ public class TuiJianEntity extends BaseEntity {
         private int showMore;
         private int showName;
         private int sort;
+        private String subTitle;
         /**
-         * id : 1
-         * name : 视频
-         * value : videos
+         * id : 12
+         * name : 视频_香蕉榜
+         * value : videos_banana_list
          */
 
         private Type type;
         private String url;
+        private String version;
         /**
-         * actionId : 1
-         * channelId : 106
-         * hide : 0
-         * id : 47294
-         * image : http://imgs.aixifan.com/content/2016_07_11/1468220722.jpg
-         * intro : 十大畅销漫画，有你喜欢的不。
-         * regionId : 9
-         * releaseDate : 1468221102000
-         * releasedAt : 1468290037000
-         * shareTagShow : 0
+         * channelId : 86
+         * image : http://imgs.aixifan.com/content/2016_07_11/1468239270.jpg
+         * intro : 你经历过毕业吗？本期视频献给所有已经毕业&amp;amp;即将毕业的人。也算是送给自己的毕业礼物了：）微信订阅：dapapi
+         * owner : {"avatar":"http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201512/26181522wk4rjc21.jpg","id":2526701,"name":"papi酱"}
+         * regionId : 183
+         * releaseDate : 1468239598000
          * status : 2
-         * subTitle :
-         * title : 岛国十大畅销漫画评选
-         * url : 2884956
-         * visit : {"comments":20,"danmakuSize":17,"goldBanana":25,"score":0,"stows":257,"ups":0,"views":4628}
+         * title : papi酱——本期视频献给所有已经毕业和即将毕业的人
+         * url : 2885831
+         * visit : {"comments":465,"danmakuSize":476,"goldBanana":3012,"score":0,"stows":1312,"ups":0,"views":177369}
          */
 
         private List<Contents> contents;
         /**
          * actionId : 6
-         * channelId : 1
+         * channelId : 63
          * hide : 0
-         * id : 5
+         * id : 15
          * image :
-         * name : 更多动画内容
-         * regionId : 9
+         * name : 更多文章内容
+         * regionId : 21
          * sort : 0
          * url :
          */
@@ -215,6 +213,14 @@ public class TuiJianEntity extends BaseEntity {
             this.sort = sort;
         }
 
+        public String getSubTitle() {
+            return subTitle;
+        }
+
+        public void setSubTitle(String subTitle) {
+            this.subTitle = subTitle;
+        }
+
         public Type getType() {
             return type;
         }
@@ -229,6 +235,14 @@ public class TuiJianEntity extends BaseEntity {
 
         public void setUrl(String url) {
             this.url = url;
+        }
+
+        public String getVersion() {
+            return version;
+        }
+
+        public void setVersion(String version) {
+            this.version = version;
         }
 
         public List<Contents> getContents() {
@@ -278,39 +292,41 @@ public class TuiJianEntity extends BaseEntity {
         }
 
         public static class Contents {
-            private int actionId;
             private int channelId;
-            private int hide;
-            private int id;
             private String image;
             private String intro;
+            /**
+             * avatar : http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201512/26181522wk4rjc21.jpg
+             * id : 2526701
+             * name : papi酱
+             */
+
+            private Owner owner;
             private int regionId;
             private long releaseDate;
-            private long releasedAt;
-            private int shareTagShow;
             private int status;
-            private String subTitle;
             private String title;
             private String url;
             /**
-             * comments : 20
-             * danmakuSize : 17
-             * goldBanana : 25
+             * comments : 465
+             * danmakuSize : 476
+             * goldBanana : 3012
              * score : 0
-             * stows : 257
+             * stows : 1312
              * ups : 0
-             * views : 4628
+             * views : 177369
              */
 
             private Visit visit;
+            /**
+             * bangumiId : 1470402
+             * sort : 310
+             * title : 第31话
+             * updateTime : 1468058753000
+             * videoId : 3790027
+             */
 
-            public int getActionId() {
-                return actionId;
-            }
-
-            public void setActionId(int actionId) {
-                this.actionId = actionId;
-            }
+            private LatestBangumiVideo latestBangumiVideo;
 
             public int getChannelId() {
                 return channelId;
@@ -318,22 +334,6 @@ public class TuiJianEntity extends BaseEntity {
 
             public void setChannelId(int channelId) {
                 this.channelId = channelId;
-            }
-
-            public int getHide() {
-                return hide;
-            }
-
-            public void setHide(int hide) {
-                this.hide = hide;
-            }
-
-            public int getId() {
-                return id;
-            }
-
-            public void setId(int id) {
-                this.id = id;
             }
 
             public String getImage() {
@@ -352,6 +352,14 @@ public class TuiJianEntity extends BaseEntity {
                 this.intro = intro;
             }
 
+            public Owner getOwner() {
+                return owner;
+            }
+
+            public void setOwner(Owner owner) {
+                this.owner = owner;
+            }
+
             public int getRegionId() {
                 return regionId;
             }
@@ -368,36 +376,12 @@ public class TuiJianEntity extends BaseEntity {
                 this.releaseDate = releaseDate;
             }
 
-            public long getReleasedAt() {
-                return releasedAt;
-            }
-
-            public void setReleasedAt(long releasedAt) {
-                this.releasedAt = releasedAt;
-            }
-
-            public int getShareTagShow() {
-                return shareTagShow;
-            }
-
-            public void setShareTagShow(int shareTagShow) {
-                this.shareTagShow = shareTagShow;
-            }
-
             public int getStatus() {
                 return status;
             }
 
             public void setStatus(int status) {
                 this.status = status;
-            }
-
-            public String getSubTitle() {
-                return subTitle;
-            }
-
-            public void setSubTitle(String subTitle) {
-                this.subTitle = subTitle;
             }
 
             public String getTitle() {
@@ -423,6 +407,46 @@ public class TuiJianEntity extends BaseEntity {
             public void setVisit(Visit visit) {
                 this.visit = visit;
             }
+
+            public LatestBangumiVideo getLatestBangumiVideo() {
+                return latestBangumiVideo;
+            }
+
+            public void setLatestBangumiVideo(LatestBangumiVideo latestBangumiVideo) {
+                this.latestBangumiVideo = latestBangumiVideo;
+            }
+
+            public static class Owner {
+                private String avatar;
+                private int id;
+                private String name;
+
+                public String getAvatar() {
+                    return avatar;
+                }
+
+                public void setAvatar(String avatar) {
+                    this.avatar = avatar;
+                }
+
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+            }
+
+
 
             public static class Visit {
                 private int comments;
@@ -487,6 +511,54 @@ public class TuiJianEntity extends BaseEntity {
 
                 public void setViews(int views) {
                     this.views = views;
+                }
+            }
+
+            public static class LatestBangumiVideo {
+                private int bangumiId;
+                private int sort;
+                private String title;
+                private long updateTime;
+                private int videoId;
+
+                public int getBangumiId() {
+                    return bangumiId;
+                }
+
+                public void setBangumiId(int bangumiId) {
+                    this.bangumiId = bangumiId;
+                }
+
+                public int getSort() {
+                    return sort;
+                }
+
+                public void setSort(int sort) {
+                    this.sort = sort;
+                }
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public long getUpdateTime() {
+                    return updateTime;
+                }
+
+                public void setUpdateTime(long updateTime) {
+                    this.updateTime = updateTime;
+                }
+
+                public int getVideoId() {
+                    return videoId;
+                }
+
+                public void setVideoId(int videoId) {
+                    this.videoId = videoId;
                 }
             }
         }
@@ -575,4 +647,6 @@ public class TuiJianEntity extends BaseEntity {
             }
         }
     }
+
+
 }

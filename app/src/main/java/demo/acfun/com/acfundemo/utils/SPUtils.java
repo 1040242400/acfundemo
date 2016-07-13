@@ -209,6 +209,9 @@ public class SPUtils {
                 } else {
                     //将16进制的数据转为数组，准备反序列化
                     byte[] stringToBytes = StringToBytes(string);
+                    if (stringToBytes == null) {
+                        return null;
+                    }
                     ByteArrayInputStream bis = new ByteArrayInputStream(stringToBytes);
                     ObjectInputStream is = new ObjectInputStream(bis);
                     //返回反序列化得到的对象

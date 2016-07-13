@@ -2,284 +2,291 @@
 <items version="2" >
 
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/library/1.6.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="1d16ffcc50b1dfa726cf978ea9f0a949cdd70e7d">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.ogaclejapan.smarttablayout-library-1.6.1_1de54105ebe387aec64be46f40878184ed3f4a23/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_38a4aeedf29042a693dd86e4cdbabd6e1e24496f/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_d38ae63712f802c66695ce9953716410aa803ad5/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.lzy.net/okhttputils/1.6.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="67a7e9453f09c5638833444dbf2d3bf1715bb5ad">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.lzy.net-okhttputils-1.6.0_edcabe37fe8b38741decfca0789b1c0f4aacca2a/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_ac32aebfcf043dc2fed27a2e3d659c0cd3a74a4f/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_9d737aecb1fd09ff9bb9821376c47fb596c29293/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_a3a87a06b5f46619326bcea8a12e87d7b67f68c5/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="a245fb364a269301dc9434ec198c5fbd0cc07797">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d849ec12197c3c6e81aa64761bf2b57cab829993/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_3d6dfaf8dabaf920a9023c02fe1bf110d14a735d/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/utils-v4/1.6.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="7dc4e0ea5b06183f6b32f08c5db6bcb6ef79c02a">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.ogaclejapan.smarttablayout-utils-v4-1.6.1_4646ff94a99c825cac8fdca0510565e970f0939a/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.pnikosis/materialish-progress/1.7/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pnikosis-materialish-progress-1.7_6c3b035cd1ea4d21c244083fc77e6a6bd1e58b7b/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-drawee-0.11.0_1e1a1282025c0829f6af3b9203d1e78b526c64eb/classes.dex" />
-    </item>
-    <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fresco-0.11.0_1796d72cb30c403cf274df8456d3b317dd97275d/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.lzy.net/okhttpserver/0.1.7/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="82edf18bb7bfecbb0a3d444e25a5a5c914bb9d7c">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.lzy.net-okhttpserver-0.1.7_17204ceb624eba555865bf0015c4a08fd3090d1f/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_82c2a952671bc87ae0a85eaed929616f8fb83dd1/classes.dex" />
+        revision="23.0.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-android-1.1.4_7a59eb7d2f4c63add94bf19956f1fa6d5bf78bc0/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-android/4.48/afa06f539a4026c10b247386312aa67404b80a16/ormlite-android-4.48.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="afa06f539a4026c10b247386312aa67404b80a16">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-android-4.48_a5aec02bb98b76d937ab65a46a4d5f7805e753cb/classes.dex" />
+        revision="23.0.2"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fbcore-0.11.0_afbc5f2e31dc13595b3d842039fd049abaa02a07/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_c27cb3773cfaeff2fac04b126e253f4de03da4cf/classes.dex" />
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_16565775dc7109d2fa9cd766ca758f2a243facd6/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_b784f19e749fc5589d73cbd6eb3e87dcae902ba3/classes.dex" />
+        revision="23.0.2"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-drawee-0.11.0_1e1a1282025c0829f6af3b9203d1e78b526c64eb/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-core/4.48/e579bd2905d0399af5029aaaf9817d5fa0ca88a5/ormlite-core-4.48.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.daimajia.slider/library/1.1.5/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-core-4.48_180593a6c61767f2e33e06fc946b40ffb4721179/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_8d23d4c5efc09abe01939cce7a16a03566f0e1e3/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="dae18b085ac2e3baeef64f1e905283a7b2d4ea35">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_39dc95a8cb2157652f144d35b87a2c3c2253c77b/classes.dex" />
+        revision="23.0.2"
+        sha1="08962e03b6a954c65d4944e092879b7f5ee1208d">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.slider-library-1.1.5_b2d8a39f9ac2e19901011714240ff65cb826ec25/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_39a3e222e7316f0912f21fa4f1dc592d2b946a33/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.github.vajro/MaterialDesignLibrary/1.6/jars/classes.jar"
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-android/4.48/afa06f539a4026c10b247386312aa67404b80a16/ormlite-android-4.48.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="b083f9ed76344c2f2b227c56d597f6d08d3fefc8">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.vajro-MaterialDesignLibrary-1.6_254394730b17b3d294a44c94e16767a63a715f82/classes.dex" />
+        revision="23.0.2"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-android-4.48_a5aec02bb98b76d937ab65a46a4d5f7805e753cb/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.1/b494968f6050d494de55dc3ce005e59c7eb40012/rxjava-1.1.1.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="b494968f6050d494de55dc3ce005e59c7eb40012">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.1_852cf82e443bae738bad2f5cb7f87f8b5f89ac75/classes.dex" />
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_38a4aeedf29042a693dd86e4cdbabd6e1e24496f/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/library/1.6.1/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_3195b625ab473076131d39ebf5dce4c8937e2ccf/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-0.11.0_04436d9f0ccd70a118aa1c620a9abdb95f762068/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-base/0.10.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="682e5e4a5ac143145dddc5e77eab7b609432da23">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-animated-base-0.10.0_d13954b0f2609547eeb2fbc168b020acce2b5ec5/classes.dex" />
+        revision="23.0.2"
+        sha1="1d16ffcc50b1dfa726cf978ea9f0a949cdd70e7d">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.ogaclejapan.smarttablayout-library-1.6.1_1de54105ebe387aec64be46f40878184ed3f4a23/classes.dex" />
     </item>
     <item
         jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.0.2/a60c039ba54c73d1133b72178e1b04133c73d13d/adapter-rxjava-2.0.2.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="a60c039ba54c73d1133b72178e1b04133c73d13d">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/adapter-rxjava-2.0.2_97fe595c041c1eb6b7979153e1a3fbd8c7e6c89a/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-base-support/0.10.0/jars/classes.jar"
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="f54beeb1646c428f456a0a3acd0da5ce6892b458">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-animated-base-support-0.10.0_62abae198d42199bf1384713f33a7f0ff35b5afd/classes.dex" />
+        revision="23.0.2"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_68d3f736645d3fcc85e2874cbb5337ed7f0018b0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0/49eb3ad545e7701234e4dd83db8dc1344b577f23/converter-gson-2.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="49eb3ad545e7701234e4dd83db8dc1344b577f23">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0_c696ce8e270ebac0716d585ab998d6cda8ea3fd8/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.1/b9d63507329a7178e026fc334f87587ee5070ac5/gson-2.6.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.6.1_a906b1b053276fc2d4568a4985c5c17bbaf92b52/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.6_dad76baaccf73fb556cd55997e63b06c33fc20c7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="750cecca702e46ff2b7425466b56a16af247f9c5">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_39dc95a8cb2157652f144d35b87a2c3c2253c77b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b31df46e51a27a27c4416f16339c15d18e88513e">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d849ec12197c3c6e81aa64761bf2b57cab829993/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.github.vajro/MaterialDesignLibrary/1.6/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b083f9ed76344c2f2b227c56d597f6d08d3fefc8">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.vajro-MaterialDesignLibrary-1.6_254394730b17b3d294a44c94e16767a63a715f82/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.lzy.net/okhttputils/1.6.5/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="064e66676a191a964e6246f4ac98641ca1dce2b7">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.lzy.net-okhttputils-1.6.5_6e656b2f41db7aa78e06c21d84a682d9f88a0dbd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-0.11.0_04436d9f0ccd70a118aa1c620a9abdb95f762068/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_3d6dfaf8dabaf920a9023c02fe1bf110d14a735d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.ogaclejapan.smarttablayout/utils-v4/1.6.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7dc4e0ea5b06183f6b32f08c5db6bcb6ef79c02a">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.ogaclejapan.smarttablayout-utils-v4-1.6.1_4646ff94a99c825cac8fdca0510565e970f0939a/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_f6647ff66b963272ee7cc955c89a3aa535243e1b/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/libs/universal-image-loader-1.9.5.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/2/universal-image-loader-1.9.5_fe4d7f99840653d5b1a00750aafcb4acaff61906/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_b6ffcf5e7259d2d1991f156dc6672b043d179200/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.0-beta3/8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2/converter-gson-2.0.0-beta3.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="8bff75d7360aaa3866f1e6949c877dfcc2b3d3e2">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta3_6eb95fe02db605b541aa8c792e7d14e30a2b559b/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.4/129874135e6081269ace2312092031558865de12/bolts-android-1.1.4.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-android-1.1.4_7a59eb7d2f4c63add94bf19956f1fa6d5bf78bc0/classes.dex" />
-    </item>
-    <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-gif/0.10.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="47aef831e38120ca1d6fd3547c86cd5a9ed63905">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-animated-gif-0.10.0_7f3c5285c5a8c3d469970db0541c948027387b0f/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_fb17aa3aede7af0efe2ea5bbaf4564e392830a72/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_16565775dc7109d2fa9cd766ca758f2a243facd6/classes.dex" />
+        revision="23.0.2"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.2.1_1a71880d3b69d57155d3299fa0d2259433fa2e6c/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars/classes.jar"
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-scalars/2.0.0/b0a1e7a46e0366fc062a76d8ad7c6bb0bf68c28f/converter-scalars-2.0.0.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/io.reactivex-rxandroid-1.0.1_66d0d4cb47b3c419a44ea26e5af834dbd61a85ed/classes.dex" />
+        revision="23.0.2"
+        sha1="b0a1e7a46e0366fc062a76d8ad7c6bb0bf68c28f">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-scalars-2.0.0_70dd389e4667f94940baeddae23df87455fe7c24/classes.dex" />
     </item>
     <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
-        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fbcore-0.11.0_afbc5f2e31dc13595b3d842039fd049abaa02a07/classes.dex" />
-    </item>
-    <item
-        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.daimajia.slider/library/1.1.5/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="08962e03b6a954c65d4944e092879b7f5ee1208d">
-        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.slider-library-1.1.5_b2d8a39f9ac2e19901011714240ff65cb826ec25/classes.dex" />
+        revision="23.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_82c2a952671bc87ae0a85eaed929616f8fb83dd1/classes.dex" />
     </item>
     <item
         jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
         jumboMode="true"
-        revision="23.0.3"
+        revision="23.0.2"
         sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
         <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-base-0.11.0_fb5b3d46d4b852b5b3d36244210ec0627ed24029/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_c27cb3773cfaeff2fac04b126e253f4de03da4cf/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_b784f19e749fc5589d73cbd6eb3e87dcae902ba3/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.j256.ormlite/ormlite-core/4.48/e579bd2905d0399af5029aaaf9817d5fa0ca88a5/ormlite-core-4.48.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/ormlite-core-4.48_180593a6c61767f2e33e06fc946b40ffb4721179/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_9d737aecb1fd09ff9bb9821376c47fb596c29293/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_ac32aebfcf043dc2fed27a2e3d659c0cd3a74a4f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.pnikosis/materialish-progress/1.7/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pnikosis-materialish-progress-1.7_6c3b035cd1ea4d21c244083fc77e6a6bd1e58b7b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_b6e4d4740832ba7900d3e697d2d6c5e294b73cb7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-base/0.10.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="682e5e4a5ac143145dddc5e77eab7b609432da23">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-animated-base-0.10.0_d13954b0f2609547eeb2fbc168b020acce2b5ec5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-base-support/0.10.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f54beeb1646c428f456a0a3acd0da5ce6892b458">
+        <dex dex="/Users/chen/Documents/AndroidStudioWork/acfundemo/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-animated-base-support-0.10.0_62abae198d42199bf1384713f33a7f0ff35b5afd/classes.dex" />
     </item>
 
 </items>

@@ -37,7 +37,15 @@ public class MainTuiJianFragment extends BaseFragment {
 
     protected View getContentView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.main_tuijian_fragment, null);
-        materialishProgress.show();
+        initErrorView(contentView, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialishProgress.show();
+                laodData();
+            }
+        });
+
+
         initView(contentView);
         laodData();
         return contentView;
@@ -66,6 +74,7 @@ public class MainTuiJianFragment extends BaseFragment {
                 .subscribe(new Observer<TuiJianEntity>() {
                     @Override
                     public void onCompleted() {
+                        hiddeErrorView();
                         swipeLayout.setRefreshing(false);
                         materialishProgress.dismiss();
                     }
@@ -73,8 +82,8 @@ public class MainTuiJianFragment extends BaseFragment {
                     @Override
                     public void onError(Throwable e) {
                         swipeLayout.setRefreshing(false);
+                        showErrorView(R.mipmap.ic_launcher, e.getMessage(), "点击刷新");
                         materialishProgress.dismiss();
-                        Toast.makeText(MainTuiJianFragment.this.getContext(), "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -83,6 +92,7 @@ public class MainTuiJianFragment extends BaseFragment {
                         showData();
                     }
                 });
+
     }
 
     private void showData() {

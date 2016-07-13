@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ import java.util.List;
 
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.model.TuiJianEntity;
+import demo.acfun.com.acfundemo.widget.ItemDecoration;
 
 /**
  * Created by chen on 16/6/16.
@@ -40,8 +42,6 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
     private LayoutInflater mLayoutInflater;
     private List<TuiJianEntity.Data> tuijianData;
     private OnRecyclerViewItemClickListener listener;
-
-    private boolean loadImg = true;
 
     //define interface
     public interface OnRecyclerViewItemClickListener {
@@ -90,13 +90,13 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 contentView = mLayoutInflater.inflate(R.layout.main_recycler_hengfu_item, parent, false);
                 return new HengFuViewHolder(contentView);
             case TuiJianEntity.XiangJiaoBang:
-                contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
+                contentView = mLayoutInflater.inflate(R.layout.main_recycler_xiangjiaobang_item, parent, false);
                 return new XiangJiaoBangViewHolder(contentView);
             case TuiJianEntity.FanJu:
-                contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
+                contentView = mLayoutInflater.inflate(R.layout.main_recycler_fanju_item, parent, false);
                 return new FanJuViewHolder(contentView);
             case TuiJianEntity.WenZhang:
-                contentView = mLayoutInflater.inflate(R.layout.main_recycler_shipin_item, parent, false);
+                contentView = mLayoutInflater.inflate(R.layout.main_recycler_wenzhang_item, parent, false);
                 return new WenZhangViewHolder(contentView);
             default:
                 return null;
@@ -119,31 +119,28 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         if (holder instanceof LunBoViewHolder) {
             LunBoViewHolder lunBoViewHolder = (LunBoViewHolder) holder;
 
-            if (loadImg) {
-                HashMap<String, String> url_maps = new HashMap<String, String>();
-                for (int i = 0; i < itemEntity.getContents().size(); i++) {
-                    url_maps.put(itemEntity.getContents().get(i).getTitle() + i, itemEntity.getContents().get(i).getImage());
-                }
-
-                for (String name : url_maps.keySet()) {
-                    DefaultSliderView defaultSliderView = new DefaultSliderView(context);
-                    // initialize a SliderLayout
-                    defaultSliderView
-                            .image(url_maps.get(name))
-                            .setScaleType(BaseSliderView.ScaleType.CenterCrop)
-                            .setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
-                                @Override
-                                public void onSliderClick(BaseSliderView slider) {
-                                    Toast.makeText(context, slider.getBundle().get("extra") + "", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                    //add your extra information
-                    defaultSliderView.bundle(new Bundle());
-                    defaultSliderView.getBundle()
-                            .putString("extra", name);
-                    lunBoViewHolder.sliderLayout.addSlider(defaultSliderView);
-                }
-                loadImg = false;
+            HashMap<String, String> url_maps = new HashMap<String, String>();
+            for (int i = 0; i < itemEntity.getContents().size(); i++) {
+                url_maps.put(itemEntity.getContents().get(i).getTitle() + i, itemEntity.getContents().get(i).getImage());
+            }
+            lunBoViewHolder.sliderLayout.removeAllSliders();
+            for (String name : url_maps.keySet()) {
+                DefaultSliderView defaultSliderView = new DefaultSliderView(context);
+                // initialize a SliderLayout
+                defaultSliderView
+                        .image(url_maps.get(name))
+                        .setScaleType(BaseSliderView.ScaleType.CenterCrop)
+                        .setOnSliderClickListener(new BaseSliderView.OnSliderClickListener() {
+                            @Override
+                            public void onSliderClick(BaseSliderView slider) {
+                                Toast.makeText(context, slider.getBundle().get("extra") + "", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                //add your extra information
+                defaultSliderView.bundle(new Bundle());
+                defaultSliderView.getBundle()
+                        .putString("extra", name);
+                lunBoViewHolder.sliderLayout.addSlider(defaultSliderView);
             }
 
             FrameLayout.LayoutParams p = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, (int) (DensityUtil.getWindowsWidth(context) * 0.39));
@@ -163,19 +160,17 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 }
             }));
 
-            if (itemEntity.getMenus() == null) {
+            if (itemEntity.getShowMore() == 0) {
+                shiPinViewHolder.line_view.setVisibility(View.GONE);
                 shiPinViewHolder.more_view.setVisibility(View.GONE);
             } else {
+                shiPinViewHolder.line_view.setVisibility(View.VISIBLE);
                 shiPinViewHolder.more_view.setVisibility(View.VISIBLE);
                 shiPinViewHolder.more.setText(itemEntity.getMenus().get(0).getName());
             }
 
-            if (position < getItemCount() - 1) {
-                if (tuijianData.get(position + 1).getType().getId() == TuiJianEntity.Hengfu) {
-                    shiPinViewHolder.mar_view.setVisibility(View.GONE);
-                } else {
-                    shiPinViewHolder.mar_view.setVisibility(View.VISIBLE);
-                }
+            if (position == tuijianData.size() - 1) {
+                shiPinViewHolder.line_view.setVisibility(View.GONE);
             }
 
         } else if (holder instanceof HengFuViewHolder) {
@@ -184,12 +179,82 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
             params.setMargins(DensityUtil.dp2px(context, 16), 0, DensityUtil.dp2px(context, 16), 0);
 //            hengFuViewHolder.image.setLayoutParams(params);
             ImageLoader.getInstance().displayImage(itemEntity.getContents().get(0).getImage(), hengFuViewHolder.image, ImageLoaderUtils.getOptionsDefault());
+            if (position == tuijianData.size() - 1) {
+                hengFuViewHolder.line_view.setVisibility(View.GONE);
+            }
         } else if (holder instanceof XiangJiaoBangViewHolder) {
             XiangJiaoBangViewHolder xiangJiaoBangViewHolder = (XiangJiaoBangViewHolder) holder;
+            ImageLoader.getInstance().displayImage(itemEntity.getImage(), xiangJiaoBangViewHolder.titleIcon, ImageLoaderUtils.getOptionsDefault());
+            xiangJiaoBangViewHolder.title.setText(itemEntity.getName());
+            xiangJiaoBangViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            xiangJiaoBangViewHolder.recyclerView.setAdapter(new MainTuiJianRecyclerXiangJiaoBangAdapter(context, itemEntity.getContents()
+                    , new MainTuiJianRecyclerXiangJiaoBangAdapter.OnRecyclerViewItemClickListener() {
+                @Override
+                public void onItemClick(int subPosition) {
+                    listener.onItemItemClick(position, subPosition);
+                }
+            }));
+
+            if (itemEntity.getShowMore() == 0) {
+                xiangJiaoBangViewHolder.line_view.setVisibility(View.GONE);
+                xiangJiaoBangViewHolder.more_view.setVisibility(View.GONE);
+            } else {
+                xiangJiaoBangViewHolder.line_view.setVisibility(View.VISIBLE);
+                xiangJiaoBangViewHolder.more_view.setVisibility(View.VISIBLE);
+                xiangJiaoBangViewHolder.more.setText(itemEntity.getMenus().get(0).getName());
+            }
+            if (position == tuijianData.size() - 1) {
+                xiangJiaoBangViewHolder.line_view.setVisibility(View.GONE);
+            }
         } else if (holder instanceof FanJuViewHolder) {
             FanJuViewHolder fanJuViewHolder = (FanJuViewHolder) holder;
+            ImageLoader.getInstance().displayImage(itemEntity.getImage(), fanJuViewHolder.titleIcon, ImageLoaderUtils.getOptionsDefault());
+            fanJuViewHolder.title.setText(itemEntity.getName());
+            fanJuViewHolder.recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
+            fanJuViewHolder.recyclerView.addItemDecoration(new ItemDecoration(DensityUtil.dp2px(context, 10), 3, itemEntity.getContents().size()));
+            fanJuViewHolder.recyclerView.setAdapter(new MainTuiJianRecyclerFanJuAdapter(context, itemEntity.getContents()
+                    , new MainTuiJianRecyclerFanJuAdapter.OnRecyclerViewItemClickListener() {
+                @Override
+                public void onItemClick(int subPosition) {
+                    listener.onItemItemClick(position, subPosition);
+                }
+            }));
+
+            if (itemEntity.getShowMore() == 0) {
+                fanJuViewHolder.line_view.setVisibility(View.GONE);
+                fanJuViewHolder.more_view.setVisibility(View.GONE);
+            } else {
+                fanJuViewHolder.line_view.setVisibility(View.VISIBLE);
+                fanJuViewHolder.more_view.setVisibility(View.VISIBLE);
+                fanJuViewHolder.more.setText(itemEntity.getMenus().get(0).getName());
+            }
+            if (position == tuijianData.size() - 1) {
+                fanJuViewHolder.line_view.setVisibility(View.GONE);
+            }
         } else if (holder instanceof WenZhangViewHolder) {
             WenZhangViewHolder wenZhangViewHolder = (WenZhangViewHolder) holder;
+            ImageLoader.getInstance().displayImage(itemEntity.getImage(), wenZhangViewHolder.titleIcon, ImageLoaderUtils.getOptionsDefault());
+            wenZhangViewHolder.title.setText(itemEntity.getName());
+            wenZhangViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            wenZhangViewHolder.recyclerView.setAdapter(new MainTuiJianRecyclerWenZhangAdapter(context, itemEntity.getContents()
+                    , new MainTuiJianRecyclerWenZhangAdapter.OnRecyclerViewItemClickListener() {
+                @Override
+                public void onItemClick(int subPosition) {
+                    listener.onItemItemClick(position, subPosition);
+                }
+            }));
+
+            if (itemEntity.getShowMore() == 0) {
+                wenZhangViewHolder.line_view.setVisibility(View.GONE);
+                wenZhangViewHolder.more_view.setVisibility(View.GONE);
+            } else {
+                wenZhangViewHolder.line_view.setVisibility(View.VISIBLE);
+                wenZhangViewHolder.more_view.setVisibility(View.VISIBLE);
+                wenZhangViewHolder.more.setText(itemEntity.getMenus().get(0).getName());
+            }
+            if (position == tuijianData.size() - 1) {
+                wenZhangViewHolder.line_view.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -213,7 +278,6 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
             super(contentView);
             sliderLayout = (SliderLayout) contentView.findViewById(R.id.slider_view);
             pagerIndicator = (PagerIndicator) contentView.findViewById(R.id.custom_indicator_view);
-
             sliderLayout.setPresetTransformer(SliderLayout.Transformer.Default);
             sliderLayout.setCustomIndicator(pagerIndicator);
             sliderLayout.setCustomAnimation(new DescriptionAnimation());
@@ -227,9 +291,9 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
     public class ShiPinViewHolder extends RecyclerView.ViewHolder {
         public ImageView titleIcon;
         public LinearLayout more_view;
-        public TextView title, more;
+        public TextView title, sub_title, more;
         public RecyclerView recyclerView;
-        public View mar_view;
+        public View line_view;
 
         public ShiPinViewHolder(View contentView) {
             super(contentView);
@@ -238,7 +302,7 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
             more_view = (LinearLayout) contentView.findViewById(R.id.more_view);
             more = (TextView) contentView.findViewById(R.id.more);
             recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
-            mar_view = (View) contentView.findViewById(R.id.mar_view);
+            line_view = (View) contentView.findViewById(R.id.line_view);
         }
     }
 
@@ -248,12 +312,12 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
     public class HengFuViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView image;
-        public View mar_view;
+        public View line_view;
 
         public HengFuViewHolder(View contentView) {
             super(contentView);
             image = (ImageView) contentView.findViewById(R.id.image_view);
-            mar_view = (View) contentView.findViewById(R.id.mar_view);
+            line_view = (View) contentView.findViewById(R.id.line_view);
         }
     }
 
@@ -261,9 +325,20 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      * 香蕉榜视图
      */
     public class XiangJiaoBangViewHolder extends RecyclerView.ViewHolder {
+        public ImageView titleIcon;
+        public LinearLayout more_view;
+        public TextView title, more;
+        public RecyclerView recyclerView;
+        public View line_view;
 
-        public XiangJiaoBangViewHolder(View view) {
-            super(view);
+        public XiangJiaoBangViewHolder(View contentView) {
+            super(contentView);
+            titleIcon = (ImageView) contentView.findViewById(R.id.title_icon_view);
+            title = (TextView) contentView.findViewById(R.id.title_view);
+            more_view = (LinearLayout) contentView.findViewById(R.id.more_view);
+            more = (TextView) contentView.findViewById(R.id.more);
+            recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
+            line_view = (View) contentView.findViewById(R.id.line_view);
         }
     }
 
@@ -271,9 +346,20 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      * 番剧视图
      */
     public class FanJuViewHolder extends RecyclerView.ViewHolder {
+        public ImageView titleIcon;
+        public LinearLayout more_view;
+        public TextView title, more;
+        public RecyclerView recyclerView;
+        public View line_view;
 
-        public FanJuViewHolder(View view) {
-            super(view);
+        public FanJuViewHolder(View contentView) {
+            super(contentView);
+            titleIcon = (ImageView) contentView.findViewById(R.id.title_icon_view);
+            title = (TextView) contentView.findViewById(R.id.title_view);
+            more_view = (LinearLayout) contentView.findViewById(R.id.more_view);
+            more = (TextView) contentView.findViewById(R.id.more);
+            recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
+            line_view = (View) contentView.findViewById(R.id.line_view);
         }
     }
 
@@ -281,49 +367,20 @@ public class MainTuiJianRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
      * 文章视图
      */
     public class WenZhangViewHolder extends RecyclerView.ViewHolder {
+        public ImageView titleIcon;
+        public LinearLayout more_view;
+        public TextView title, more;
+        public RecyclerView recyclerView;
+        public View line_view;
 
-        public WenZhangViewHolder(View view) {
-            super(view);
-        }
-    }
-
-    /**
-     * 视频间距
-     */
-    public class ItemDecoration extends RecyclerView.ItemDecoration {
-        private int sPace;
-        private int rowNum;
-        private int count;
-
-        public ItemDecoration(int sPace, int rowNum, int count) {
-            this.sPace = sPace;
-            this.rowNum = rowNum;
-            this.count = count;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-
-            int left = 0, right = 0, bottom = 0, top = 0;
-
-            int position = parent.getChildPosition(view);
-            if ((position + 1) % 2 == 0) {
-                left = sPace / 2;
-            } else {
-                right = sPace / 2;
-            }
-
-            int lastLineCount = count % rowNum;
-            if (position + 1 <= (count - lastLineCount)) {
-                bottom = sPace / 2;
-            }
-
-            if (view.getTag() == null) {
-                view.setTag(true);
-                outRect.set(left, top, right, bottom);
-            }
-
-            LogUtils.d(position + "item 间距 == left：" + outRect.left + "===right:" + outRect.right + "===bottom:" + outRect.bottom);
+        public WenZhangViewHolder(View contentView) {
+            super(contentView);
+            titleIcon = (ImageView) contentView.findViewById(R.id.title_icon_view);
+            title = (TextView) contentView.findViewById(R.id.title_view);
+            more_view = (LinearLayout) contentView.findViewById(R.id.more_view);
+            more = (TextView) contentView.findViewById(R.id.more);
+            recyclerView = (RecyclerView) contentView.findViewById(R.id.recycler_view);
+            line_view = (View) contentView.findViewById(R.id.line_view);
         }
     }
 }

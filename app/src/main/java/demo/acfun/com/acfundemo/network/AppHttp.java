@@ -16,6 +16,7 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -60,17 +61,15 @@ public class AppHttp {
                             public Response intercept(Chain chain) throws IOException {
                                 Request request = chain.request()
                                         .newBuilder()
-                                        .addHeader("If-Modified-Since", "Tue, 12 Jul 2016 05:44:21 GMT+00:00")
                                         .addHeader("User-agent", "acvideo core")
-                                        .addHeader("market", "baidu")
                                         .addHeader("productId", "2000")
                                         .addHeader("deviceType", "1")
                                         .addHeader("uid", "0")
-                                        .addHeader("appVersion", "4.1 .8")
+                                        .addHeader("appVersion", "4.1.8")
                                         .addHeader("resolution", "1080x1776")
                                         .addHeader("udid", "9627719a-6aa9-383b-bf57-ccdc2b12bd8e")
-                                        .addHeader("If-None-Match", "a4229863-1ec9-44bb-b41a-06418ae19562")
                                         .addHeader("Host", "api.aixifan.com")
+                                        .addHeader("market", "tencent")
                                         .addHeader("Connection", "Keep-Alive")
                                         .addHeader("Accept-Encoding", "gzip")
                                         .build();
@@ -103,11 +102,18 @@ public class AppHttp {
 
 
     public interface RetrofitApi {
+        /**
+         *主页 数据
+         */
         @GET("regions?")
         Observable<TuiJianEntity> getTuijian(@Query("belong") String belong, @Query("loadCount") String loadCount);
 
+        /**
+         * 欢迎页面 图片
+         */
         @GET("flashScreens/{getFlashScreen}")
         Observable<WelComeEntity> getWelCome(@Path("getFlashScreen") String getFlashScreen);
+
 
     }
 

@@ -75,6 +75,7 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
         final ViewHolder viewHolder = (ViewHolder) holder;
 
         viewHolder.title.setText(itemEntity.getTitle());
+        //recycler 边距 16dp item 边距 10dp 去除后布局显示不会越界
         FrameLayout.LayoutParams imgP = new FrameLayout.LayoutParams((int) ((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2), (int) (((DensityUtil.getWindowsWidth(context) - DensityUtil.dp2px(context, 16 + 16 + 10)) / 2) * 0.5625));
         viewHolder.imageView.setLayoutParams(imgP);
 
@@ -87,8 +88,8 @@ public class MainTuiJianRecyclerShiPingAdapter extends RecyclerView.Adapter<Recy
         viewHolder.imageView.setController(draweeController);
 //        ImageLoader.getInstance().displayImage(itemEntity.getImage(), viewHolder.imageView, ImageLoaderUtils.getOptionsRounde(context));
 
-        viewHolder.views.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getViews(), null));
-        viewHolder.stows.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getStows(), null));
+//        viewHolder.views.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getViews(), null));
+//        viewHolder.stows.setText(StringUtils.toWanNumberString(itemEntity.getVisit().getStows(), null));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

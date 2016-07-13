@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:scaleType="fitXY"
+            fresco:fadeDuration="0"
+            fresco:failureImage="@color/colorPrimary"
+            fresco:failureImageScaleType="fitXY"
+            fresco:placeholderImage="@color/white"
+            fresco:placeholderImageScaleType="fitXY"
+            fresco:retryImage="@color/white"
+            fresco:retryImageScaleType="fitXY"
+            fresco:roundWithOverlayColor="@color/white"
+            fresco:roundedCornerRadius="4dp"
+            fresco:roundingBorderColor="@color/e"
+            fresco:roundingBorderWidth="1px" />
+
+        <ImageView
+            android:id="@+id/banana_ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_margin="5dp"
+            android:background="@drawable/view_radius4dp_frame_bg"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:src="@mipmap/ic_banana_ranking_1" />
+
+        <LinearLayout
+            android:id="@+id/count_view"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="5dp"
+            android:background="@drawable/view_radius4dp_frame_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@mipmap/ic_fav_home_views" />
+
+            <TextView
+                android:id="@+id/views_view"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="9.9万"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_s" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_video_item_danmaku_white" />
+
+            <TextView
+                android:id="@+id/stows_view"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginLeft="4dp"
+                android:gravity="center"
+                android:text="2132"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_s" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="title"
+            android:textColor="@color/APPTextColor"
+            android:textSize="@dimen/font_size_xx"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_banana_rank" />
+
+            <TextView
+                android:id="@+id/banana_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/bananaColor"
+                android:textSize="@dimen/font_size_x" />
+
+            <TextView
+                android:id="@+id/up_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/eight8"
+                android:textSize="@dimen/font_size_x" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

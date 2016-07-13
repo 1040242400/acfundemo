@@ -30,4 +30,8 @@ public class BaseEntity implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }
+
+
