@@ -2,8 +2,11 @@
 <resources>
     <color name="clearColor">#00000000</color>
     <color name="e">#eeeeee</color>
+    <color name="e5">#e5e5e5</color>
+    <color name="f8">#f8f8f8</color>
     <color name="white">#ffffff</color>
     <color name="APPTextColor">#333333</color>
+    <color name="black">#000000</color>
     <color name="six6">#666666</color>
     <color name="colorPrimary">#fd4c5b</color>
     <color name="colorPrimaryDark">#e34451</color>

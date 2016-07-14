@@ -1,8 +1,7 @@
 package demo.acfun.com.acfundemo.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -16,12 +15,11 @@ import android.widget.Toast;
 
 import demo.acfun.com.acfundemo.network.AppHttp;
 
-import java.util.List;
-
 import demo.acfun.com.acfundemo.base.BaseFragment;
 import demo.acfun.com.acfundemo.R;
 import demo.acfun.com.acfundemo.adapter.MainTuiJianRecyclerAdapter;
 import demo.acfun.com.acfundemo.model.TuiJianEntity;
+import demo.acfun.com.acfundemo.ui.VideoInfo.VideoInfoActivity;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -48,6 +46,7 @@ public class MainTuiJianFragment extends BaseFragment {
 
 
         initView(contentView);
+        materialishProgress.show();
         laodData();
         return contentView;
     }
@@ -110,7 +109,8 @@ public class MainTuiJianFragment extends BaseFragment {
 
                 @Override
                 public void onItemItemClick(int position, int subPosition) {
-                    Snackbar.make(getView(), "item item on click" + position + "," + subPosition, Snackbar.LENGTH_SHORT).show();
+                    Intent toInfo = new Intent(getActivity(), VideoInfoActivity.class);
+                    toLeftStartActivity(toInfo);
                 }
             });
             recyclerView.setAdapter(recyclerAdapter);

@@ -1,9 +1,11 @@
 package demo.acfun.com.acfundemo.base;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +18,14 @@ import android.widget.TextView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import demo.acfun.com.acfundemo.R;
+import demo.acfun.com.acfundemo.utils.DensityUtil;
 import demo.acfun.com.acfundemo.utils.LogUtils;
 
 /**
  * Created by chen on 16/6/15.
  */
 public abstract class BaseFragment extends Fragment {
-    private LinearLayout baseErrorView;
+    private LinearLayout baseErrorView, baseErrorContentView;
     private ImageView baseErrorImg;
     private TextView baseErrorMsg;
     private Button baseErrorBut;
@@ -47,9 +50,12 @@ public abstract class BaseFragment extends Fragment {
      */
     public void initErrorView(View view, View.OnClickListener onClickListener) {
         baseErrorView = (LinearLayout) view.findViewById(R.id.base_error_view);
+        baseErrorContentView = (LinearLayout) view.findViewById(R.id.base_error_content_view);
         baseErrorImg = (ImageView) view.findViewById(R.id.base_error_img);
         baseErrorMsg = (TextView) view.findViewById(R.id.base_error_msg);
         baseErrorBut = (Button) view.findViewById(R.id.base_error_but);
+        LinearLayout.LayoutParams baseErrorConLayoutParams = new LinearLayout.LayoutParams(DensityUtil.getWindowsWidth(this.getActivity()), DensityUtil.getWindowsHeight(this.getActivity()));
+        baseErrorContentView.setLayoutParams(baseErrorConLayoutParams);
         baseErrorBut.setOnClickListener(onClickListener);
     }
 
@@ -81,6 +87,19 @@ public abstract class BaseFragment extends Fragment {
         ProgressWheel progressWheel = (ProgressWheel) contentView.findViewById(R.id.progress_wheel);
         materialishProgress.requestWindowFeature(Window.FEATURE_NO_TITLE);
         materialishProgress.setContentView(contentView);
+    }
+
+    // 左边 进入
+    public void toLeftStartActivity(Intent intent) {
+        super.startActivity(intent);
+        //参数一 是当前即将进入屏幕的view 的动画，参数二是当前view 的动画
+        getActivity().overridePendingTransition(R.anim.push_a, R.anim.push_b);
+    }
+
+    //右边 消失
+    public void toRightFinish() {
+        getActivity().finish();
+        getActivity().overridePendingTransition(R.anim.pop_a, R.anim.pop_b);
     }
 
     /**
